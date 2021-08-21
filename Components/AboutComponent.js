@@ -49,9 +49,9 @@ const AboutComponent = () => {
         <Flex
           direction="column"
           gridGap="5"
-          width={{ base: "40%", md: "100%", lg: "40%" }}
+          width={{ base: "100%", md: "100%", lg: "40%" }}
           pt={{ xl: 0, sm: 10, md: 10 }}
-          ml="15%"
+          ml={{ base: "0", md: "0", lg: "15%" }}
         >
           <Text textAlign="justify" fontSize="md">
             My education and work experiences have taught me the need for

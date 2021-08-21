@@ -102,8 +102,12 @@ const Navbar = () => {
               <Link href="/project">
                 <a>Projects</a>
               </Link>
-              <Link href="/about">
+              <Link href="/blogs">
                 <a>Blogs</a>
+              </Link>
+
+              <Link href="/contact">
+                <a>Contact</a>
               </Link>
             </Flex>
           </DrawerBody>

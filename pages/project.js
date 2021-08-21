@@ -1,4 +1,4 @@
-import { Container, Flex, Heading, Text } from "@chakra-ui/react";
+import { Container, Flex, Text } from "@chakra-ui/react";
 import ProjectCard from "../Components/projectCards";
 
 const projects = [
@@ -58,7 +58,7 @@ const project = () => {
   return (
     <Container maxW="container.xl" mt="20">
       <Text fontSize="x-large" fontWeight="bold" mb="20">
-        Things I've Been Working On.
+        Things I &apos; ve Been Working On.
       </Text>
       <Flex direction="row" flexWrap="wrap" gridGap="40">
         {projects.map((project) => (

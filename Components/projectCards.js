@@ -1,11 +1,10 @@
-import { Box, Flex, Square, Text, img, Heading } from "@chakra-ui/react";
+import { Box, Flex, Text, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 const ProjectCard = ({
   projectName,
   projectDescription,
   languageUsed,
   imageSrc,
-  padding,
 }) => {
   return (
     <Flex direction="column" width="lg" overflow="hidden">

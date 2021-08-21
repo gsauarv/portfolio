@@ -1,22 +1,6 @@
-import {
-  Button,
-  Container,
-  Flex,
-  Heading,
-  IconButton,
-  Text,
-  Tooltip,
-} from "@chakra-ui/react";
-import {
-  AiFillYoutube,
-  AiFillGithub,
-  AiFillInstagram,
-  AiOutlineCloudDownload,
-  AiOutlineNodeExpand,
-} from "react-icons/ai";
-import Image from "next/image";
-import icon from "../public/icon.svg";
-import { route } from "next/dist/server/router";
+import { Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import SocialLinks from "./SocialLink";
+import { AiFillGithub, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 const Landing = () => {
   return (
     <Container maxWidth="container.xl">
@@ -46,44 +30,22 @@ const Landing = () => {
           Follow me on social media to know me better.
         </Text>
         <Flex gridGap="3" pb="5">
-          <Tooltip
-            hasArrow
-            label="visit github"
-            fontSize="xs"
-            closeDelay={0.05}
-          >
-            <IconButton
-              aria-label="Github Icon"
-              icon={<AiFillGithub size="20" />}
-              _focus={{ outline: 0 }}
-            />
-          </Tooltip>
+          <SocialLinks
+            iconAriaName="Github"
+            iconName={<AiFillGithub />}
+            linkButton="https://github.com/gsauarv"
+          />
 
-          <Tooltip
-            hasArrow
-            label="visit youtube"
-            fontSize="xs"
-            closeDelay={0.05}
-          >
-            <IconButton
-              aria-label="Twitter icon"
-              icon={<AiFillYoutube size="20" />}
-              _focus={{ outline: 0 }}
-            />
-          </Tooltip>
-
-          <Tooltip
-            hasArrow
-            label="visit instagram"
-            fontSize="xs"
-            closeDelay={0.05}
-          >
-            <IconButton
-              aria-label="Instagram Icon"
-              icon={<AiFillInstagram size="20" />}
-              _focus={{ outline: 0 }}
-            />
-          </Tooltip>
+          <SocialLinks
+            iconAriaName="youtube"
+            iconName={<AiFillYoutube />}
+            linkButton="https://www.youtube.com/channel/UClTCDuid2XiJukenc1NRSpQ"
+          />
+          <SocialLinks
+            iconAriaName="instagram"
+            iconName={<AiFillInstagram />}
+            linkButton="https://instagram.com/gh_saurav"
+          />
         </Flex>
         <Flex pt="5" gridGap="3">
           <Button
@@ -92,7 +54,7 @@ const Landing = () => {
             _focus={{ outline: 0 }}
             letterSpacing="wider"
             colorScheme="green"
-            rightIcon={<AiOutlineNodeExpand fontSize="24" fontWeight="bold" />}
+            // rightIcon={<AiOutlineNodeExpand fontSize="24" fontWeight="bold" />}
           >
             View My Projects
           </Button>
@@ -102,9 +64,9 @@ const Landing = () => {
             _focus={{ outline: 0 }}
             letterSpacing="wider"
             variant="outline"
-            rightIcon={
-              <AiOutlineCloudDownload fontSize="24" fontWeight="bold" />
-            }
+            // rightIcon={
+            //   <AiOutlineCloudDownload fontSize="24" fontWeight="bold" />
+            // }
           >
             Download My CV
           </Button>
