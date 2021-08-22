@@ -26,13 +26,13 @@ export const getServerSideProps = async ({ params }) => {
   return { props: { ...post } };
 };
 
-export const getStaticPaths = async () => {
-  const posts = await Client.fetch(`*[_type == "post" ]
-  {
-      'slug': slug.current
-  }`);
-  return {
-    paths: posts.map(({ slug }) => `/blogs/${slug}`),
-    fallback: false,
-  };
-};
+// export const getStaticPaths = async () => {
+//   const posts = await Client.fetch(`*[_type == "post" ]
+//   {
+//       'slug': slug.current
+//   }`);
+//   return {
+//     paths: posts.map(({ slug }) => `/blogs/${slug}`),
+//     fallback: false,
+//   };
+// };
