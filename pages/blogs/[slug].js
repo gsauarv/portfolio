@@ -12,7 +12,7 @@ const BlogDetails = ({ title }) => {
 
 export default BlogDetails;
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const slug = params.slug;
   const [post] = await Client.fetch(
     `*[_type == "post" && slug.current == "${slug}"]
@@ -25,17 +25,16 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: { ...post },
-    revalidate: 2,
   };
 };
 
-export const getStaticPaths = async () => {
-  const posts = await Client.fetch(`*[_type == "post" ]
-  {
-      'slug': slug.current
-  }`);
-  return {
-    paths: posts.map(({ slug }) => `/blogs/${slug}`),
-    fallback: false,
-  };
-};
+// export const getStaticPaths = async () => {
+//   const posts = await Client.fetch(`*[_type == "post" ]
+//   {
+//       'slug': slug.current
+//   }`);
+//   return {
+//     paths: posts.map(({ slug }) => `/blogs/${slug}`),
+//     fallback: false,
+//   };
+// };
