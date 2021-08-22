@@ -12,7 +12,7 @@ const BlogDetails = ({ title }) => {
 
 export default BlogDetails;
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const slug = params.slug;
   const [post] = await Client.fetch(
     `*[_type == "post" && slug.current == "${slug}"]

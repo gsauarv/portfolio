@@ -23,7 +23,7 @@ const Blogs = ({ posts }) => {
 
 export default Blogs;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const posts = await Client.fetch(`*[_type == 'post']
   {
       _id,
