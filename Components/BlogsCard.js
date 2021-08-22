@@ -1,6 +1,6 @@
 import { Flex, Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
-const BlogsCards = () => {
+const BlogsCards = ({ blogTitle, publishedAt, blogDescription, imageSrc }) => {
   return (
     <Flex
       height={{ base: "100%", md: "100%", lg: "60" }}
@@ -28,7 +28,7 @@ const BlogsCards = () => {
           loading="lazy"
           overflow="hidden"
           layout="responsive"
-          src="https://image.freepik.com/free-vector/people-making-list-illustration_53876-66076.jpg"
+          src={imageSrc}
         ></Image>
       </Box>
 
@@ -53,7 +53,7 @@ const BlogsCards = () => {
             cursor: "pointer",
           }}
         >
-          How to make the responsive layout using chakra ui.
+          {blogTitle}
         </Text>
 
         <Text
@@ -64,11 +64,11 @@ const BlogsCards = () => {
           isTruncated
           letterSpacing="wider"
         >
-          UI DESIGN | REACT
+          {blogDescription}
         </Text>
 
         <Text variant="date" color="green.700">
-          2018/03/12
+          {publishedAt}
         </Text>
       </Flex>
     </Flex>
