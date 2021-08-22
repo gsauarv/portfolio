@@ -23,7 +23,7 @@ const Blogs = ({ posts }) => {
 
 export default Blogs;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const posts = await Client.fetch(`*[_type == 'post']
   {
       _id,
@@ -37,6 +37,6 @@ export const getServerSideProps = async () => {
   }`);
 
   return {
-    props: { posts },
+    props: { posts, unstable_revalidate: 1 },
   };
 };
