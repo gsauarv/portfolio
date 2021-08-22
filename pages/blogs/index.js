@@ -1,4 +1,4 @@
-import { Container, Flex } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import BlogsCards from "../../Components/BlogsCard";
 import Link from "next/link";
 import Client from "../../Client";
