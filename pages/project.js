@@ -14,8 +14,7 @@ const projects = [
   {
     projectName: "Hello world",
     projectDescription: "Hello world this is the descriptioin",
-    imageUrl:
-      "https://image.freepik.com/free-vector/people-making-list-illustration_53876-66076.jpg",
+
     languageUsed: "Javascript and React",
     id: 2,
   },
@@ -23,8 +22,7 @@ const projects = [
   {
     projectName: "Hello world",
     projectDescription: "Hello world this is the descriptioin",
-    imageUrl:
-      "https://image.freepik.com/free-vector/people-making-list-illustration_53876-66076.jpg",
+
     languageUsed: "Javascript and React",
     id: 3,
   },
@@ -32,24 +30,21 @@ const projects = [
   {
     projectName: "Hello world",
     projectDescription: "Hello world this is the descriptioin",
-    imageUrl:
-      "https://miro.medium.com/max/5000/1*Dpb3vjQtqb4D1nAU4RnRWA@2x.png",
+
     languageUsed: "Javascript and React",
     id: 4,
   },
   {
     projectName: "Hello world",
     projectDescription: "Hello world this is the descriptioin",
-    imageUrl:
-      "https://image.freepik.com/free-vector/people-making-list-illustration_53876-66076.jpg",
+
     languageUsed: "Javascript and React",
     id: 5,
   },
   {
     projectName: "Hello world",
     projectDescription: "Hello world this is the descriptioin",
-    imageUrl:
-      "https://image.freepik.com/free-vector/people-making-list-illustration_53876-66076.jpg",
+
     languageUsed: "Javascript and React",
     id: 6,
   },
@@ -65,7 +60,6 @@ const project = () => {
           <ProjectCard
             projectName={project.projectName}
             projectDescription={project.projectDescription}
-            imageSrc={project.imageUrl}
             languageUsed={project.languageUsed}
             key={project.id}
             padding={project.id % 2 == 0 ? 50 : 0}

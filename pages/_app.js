@@ -1,14 +1,22 @@
 import "../styles/globals.css";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Layout from "../Components/Layout";
+import { AnimatePresence } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
+  const theme = extendTheme({
+    config: {
+      initialColorMode: "dark",
+    },
+  });
   return (
-    <ChakraProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
+    <AnimatePresence exitBeforeEnter>
+      <ChakraProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
+    </AnimatePresence>
   );
 }
 

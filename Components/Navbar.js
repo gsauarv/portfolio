@@ -11,25 +11,13 @@ import {
   useDisclosure,
   Divider,
   Tooltip,
-  Text,
   Heading,
-  Center,
-  Box,
 } from "@chakra-ui/react";
 // Chakra Ui Imports ends kinda herer
-
-// importing the Image from the next/image module i.e for the image optimization
-// which is the one of the reason to use the next insted of the plain react.
-
-import Image from "next/image";
 
 // Icons from the chakra ui itself to indicate the toggle buttons for theme control
 
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-
-// Importing the link from the next/link as it will help the server pre-render(generate) the
-// static sites.
-import Link from "next/link";
 
 // Using the ref for referencing the bottom
 import { useRef } from "react";
@@ -38,7 +26,9 @@ import { useRef } from "react";
 import { useColorMode, toggleColorMode } from "@chakra-ui/color-mode";
 
 // Importing the logo from the public folder.
-import logo from "../public/icon.svg";
+import DrawerLink from "./DrawerLink";
+// For animation
+
 const Navbar = () => {
   // Functions to control the drawer state.
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -84,7 +74,6 @@ const Navbar = () => {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        motionPreset="slideInRight"
       >
         <DrawerOverlay />
         <DrawerContent>
@@ -92,23 +81,12 @@ const Navbar = () => {
           <DrawerHeader>Navigation</DrawerHeader>
           <Divider />
           <DrawerBody pt="5">
-            <Flex direction="column" gridGap="5">
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-              <Link href="/project">
-                <a>Projects</a>
-              </Link>
-              <Link href="/blogs">
-                <a>Blogs</a>
-              </Link>
-
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
+            <Flex direction="column" gridGap="5" onClick={onClose}>
+              <DrawerLink linkName="Home" linkPath="/" />
+              <DrawerLink linkName="About" linkPath="/about" />
+              <DrawerLink linkName="Blogs" linkPath="/blogs" />
+              <DrawerLink linkName="Projects" linkPath="/project" />
+              <DrawerLink linkName="Contact" linkPath="/contact" />
             </Flex>
           </DrawerBody>
         </DrawerContent>

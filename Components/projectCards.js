@@ -9,14 +9,14 @@ const ProjectCard = ({
   return (
     <Flex direction="column" width="lg" overflow="hidden">
       <Box borderRadius="lg" width="xl" height="md" background="salmon">
-        <Image
+        {/* <Image
           src={imageSrc}
           width="1080"
           height="850"
           quality="80"
           layout="responsive"
           overflow="hidden"
-        ></Image>
+        ></Image> */}
       </Box>
       <Flex direction="column" pt="5">
         <Heading>{projectName}</Heading>

@@ -1,6 +1,12 @@
 import { Flex, Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
-const BlogsCards = ({ blogTitle, publishedAt, blogDescription, imageSrc }) => {
+const BlogsCards = ({
+  blogTitle,
+  publishedAt,
+  blogDescription,
+  imageSrc = "",
+  slug,
+}) => {
   return (
     <Flex
       height={{ base: "100%", md: "100%", lg: "60" }}
@@ -22,14 +28,7 @@ const BlogsCards = ({ blogTitle, publishedAt, blogDescription, imageSrc }) => {
         background="gray.400"
         overflow="hidden"
       >
-        <Image
-          width="3"
-          height="3"
-          loading="lazy"
-          overflow="hidden"
-          layout="responsive"
-          src={imageSrc}
-        ></Image>
+        <Image src={imageSrc} width="3" height="3" layout="responsive"></Image>
       </Box>
 
       <Flex

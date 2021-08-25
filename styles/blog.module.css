@@ -1,0 +1,33 @@
+.blockContent > h2,
+.blockContent > h1,
+.blockContent > p,
+.blockContent > h1,
+.blockContent > h3,
+.blockContent > h4,
+.blockContent > blockquote {
+  font-size: 25px;
+  margin-bottom: 1em;
+  letter-spacing: 0.2px;
+}
+
+.blockContent > p {
+  font-size: 16px;
+}
+
+.blockContent > h1 {
+  font-size: 30px;
+}
+
+.blockContent > h3 {
+  font-size: 20px;
+}
+
+.blockContent > h4 {
+  font-size: 15px;
+}
+
+.blockContent > blockquote {
+  font-size: 16px;
+  border-left: 3px solid gray;
+  padding: 10px;
+}

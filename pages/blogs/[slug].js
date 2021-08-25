@@ -1,16 +1,26 @@
 // Importing the router from the next/router to get the slug from the url
 // It uses the useRouter hooks to get the current slug.
 
-import { Container } from "@chakra-ui/layout";
 import Client from "../../Client";
+import BlogDetailsComponent from "../../Components/BlogDetailsComponent";
 
 // Functionall component to get  the sanity api and  display its content.
 
-const BlogDetails = ({ title }) => {
-  return <Container>{title}</Container>;
+const BlogDetails = ({ title, description, body, mainImage }) => {
+  return (
+    <BlogDetailsComponent
+      blogTitle={title}
+      blogDescription={description}
+      body={body}
+      mainImage={mainImage}
+    />
+  );
 };
 
 export default BlogDetails;
+
+// getting the serversideprops to ensure the data we are getting is fresh and updated from the
+// server.
 
 export const getServerSideProps = async ({ params }) => {
   const slug = params.slug;
@@ -18,7 +28,9 @@ export const getServerSideProps = async ({ params }) => {
     `*[_type == "post" && slug.current == "${slug}"]
 {
   title,
-  "slug" : slug.current
+  description,
+  body,
+  "mainImage" : mainImage.asset -> url
 }
   `
   );
