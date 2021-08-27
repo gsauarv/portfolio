@@ -21,7 +21,7 @@ const ContactCard = () => {
             letterSpacing="wide"
             color="gray.600"
           >
-            Let &apos s Talk business.
+            Let&apos;s Talk business.
           </Text>
         </motion.div>
         <motion.div variants={fadeInUp}>

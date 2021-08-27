@@ -20,7 +20,7 @@ const AboutComponent = () => {
           <motion.div variants={stagger}>
             <motion.div variants={fadeInUp}>
               <Heading fontSize="xx-large" letterSpacing="wide">
-                Hi, I &apos m Saurav Ghimire
+                Hi, I&apos;m Saurav Ghimire
               </Heading>
             </motion.div>
 

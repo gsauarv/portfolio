@@ -85,7 +85,7 @@ const Navbar = () => {
               <DrawerLink linkName="Home" linkPath="/" />
               <DrawerLink linkName="About" linkPath="/about" />
               <DrawerLink linkName="Blogs" linkPath="/blogs" />
-              <DrawerLink linkName="Projects" linkPath="/project" />
+              <DrawerLink linkName="Projects" linkPath="/projects" />
               <DrawerLink linkName="Contact" linkPath="/contact" />
             </Flex>
           </DrawerBody>

@@ -41,7 +41,13 @@ const BlogDetailsComponent = ({
           transition={{ delay: 0.2 }}
         >
           <Box height="xl" mt="10" overflow="hidden">
-            <Image src={mainImage} width="3" height="3" layout="responsive" />
+            <Image
+              src={mainImage}
+              width="3"
+              height="3"
+              layout="responsive"
+              alt="mainImage"
+            />
           </Box>
         </motion.div>
         {/* Heading of the blog */}
