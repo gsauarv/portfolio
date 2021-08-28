@@ -10,7 +10,7 @@ import {
 
 const AuthorAvatar = () => {
   return (
-    <Stack direction="row" alignItems="center" mt="5" mb="10">
+    <Stack direction="row" alignItems="center" mt="5" mb="32">
       <Avatar
         size="md"
         name="Saurav Ghimire"

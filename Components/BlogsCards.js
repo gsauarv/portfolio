@@ -5,7 +5,7 @@ const BlogsCards = ({
   blogTitle,
   publishedAt,
   blogDescription,
-  imageSrc = "",
+  imageSrc,
   slug,
 }) => {
   return (
@@ -25,14 +25,24 @@ const BlogsCards = ({
           cursor: "pointer",
         }}
       >
-        <Box
-          w={{ base: "sm", lg: "sm" }}
-          height={{ base: "250", sm: "auto", lg: "auto" }}
-          background="gray.400"
-          overflow="hidden"
-        >
-          {/* <Image src={imageSrc} width="3" height="3" layout="responsive"></Image> */}
-        </Box>
+        {imageSrc.length < 2 ? (
+          <></>
+        ) : (
+          <Box
+            w={{ base: "sm", lg: "sm" }}
+            height={{ base: "250", sm: "auto", lg: "auto" }}
+            background="gray.400"
+            overflow="hidden"
+            borderRadius="lg"
+          >
+            {/* <Image
+            src={imageSrc}
+            width="3"
+            height="3"
+            layout="responsive"
+          ></Image> */}
+          </Box>
+        )}
 
         <Flex
           w={{ base: "100%", md: "100%", lg: "60%" }}
@@ -56,7 +66,6 @@ const BlogsCards = ({
             }}
           >
             {blogTitle}
-            <Divider orientation="horizontal" />
           </Text>
 
           <Text

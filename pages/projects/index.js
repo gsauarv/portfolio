@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
 import BlogsCards from "../../Components/BlogsCards";
 import Link from "next/link";
-const project = () => {
+import sanityClient from "../../Client";
+const project = ({ projects }) => {
   return (
     <motion.div initial="initial" animate="animate" variant={stagger}>
       <Container
@@ -19,15 +20,20 @@ const project = () => {
         </Text>
         <Flex direction="column">
           <motion.div variants={fadeInUp}>
-            <Link href={"projects/a"}>
-              <a>
-                <BlogsCards
-                  blogTitle="hello"
-                  blogDescription="React | Javascript"
-                  publishedAt="2018/0/14"
-                />
-              </a>
-            </Link>
+            {projects.map((project) => (
+              <Link href={`projects/${project.slug}`}>
+                <a>
+                  <BlogsCards
+                    blogTitle={project.projectName}
+                    blogDescription={project.projectDesc}
+                    key={project.projectId}
+                    slug={project.slug}
+                    imageSrc={project.mainImage}
+                    publishedAt={project.publishedAt}
+                  />
+                </a>
+              </Link>
+            ))}
           </motion.div>
         </Flex>
       </Container>
@@ -36,3 +42,23 @@ const project = () => {
 };
 
 export default project;
+
+export const getStaticProps = async () => {
+  const projects = await sanityClient.fetch(`*[_type == "project"]
+  {
+    "projectId":_id,
+    projectName,
+    projectDesc,
+    publishedAt,
+    "mainImage" : "",
+    "slug" : slug.current,
+    videoUrl
+  }`);
+
+  return {
+    props: {
+      projects,
+    },
+    revalidate: 1,
+  };
+};

@@ -26,7 +26,7 @@ const Blogs = ({ posts }) => {
                   blogTitle={post.title}
                   publishedAt={post.publishedAt}
                   blogDescription={post.description}
-                  imageSrc={post.imageSrc}
+                  imageSrc={post.mainImage}
                   slug={post.slug}
                 />
               </motion.div>

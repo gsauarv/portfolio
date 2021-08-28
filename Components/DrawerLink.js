@@ -17,6 +17,7 @@ const DrawerLink = ({ linkName, linkPath }) => {
             _hover={{
               backgroundColor: "#212d3d",
               borderRadius: 10,
+              color: "white",
             }}
             px="2"
             py="2"
