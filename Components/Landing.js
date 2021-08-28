@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 const Landing = () => {
   return (
     <motion.div initial="initial" animate="animate" variants={stagger}>
-      <Container maxWidth="container.xl">
+      <Container
+        maxWidth={{
+          base: "100%",
+          md: "container.lg",
+          xl: "1200",
+        }}
+      >
         <Flex
           direction="column"
           justify="center"

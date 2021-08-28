@@ -14,7 +14,14 @@ import { stagger, fadeInUp } from "./Animation";
 import { motion } from "framer-motion";
 const AboutComponent = () => {
   return (
-    <Container maxW="container.xl" overflow="auto">
+    <Container
+      maxWidth={{
+        base: "container.sm",
+        md: "container.lg",
+        xl: "1200",
+      }}
+      overflow="auto"
+    >
       <motion.div initial="initial" animate="animate">
         <Box w="80%" pt="100">
           <motion.div variants={stagger}>

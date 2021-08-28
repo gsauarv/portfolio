@@ -3,7 +3,13 @@ import ContactCard from "../Components/ContactCard";
 
 const Contact = () => {
   return (
-    <Container maxW="container.xl">
+    <Container
+      maxWidth={{
+        base: "container.sm",
+        md: "container.lg",
+        xl: "1200",
+      }}
+    >
       <ContactCard />
     </Container>
   );

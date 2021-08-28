@@ -31,3 +31,17 @@
   border-left: 3px solid gray;
   padding: 10px;
 }
+
+.blockContent > pre {
+  background-color: #212d3d;
+  padding: 20px;
+  color: #eeeeee;
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.blockContent > img {
+  height: 100%;
+  width: 100%;
+}

@@ -1,14 +1,23 @@
 import Client from "../../Client";
 import BlogsCards from "../../Components/BlogsCards";
 import Link from "next/link";
-import { Container } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
 
 const Blogs = ({ posts }) => {
   return (
     <motion.div initial="initial" animate="animate" variants={stagger}>
-      <Container maxW="container.xl">
+      <Container
+        maxWidth={{
+          base: "container.sm",
+          md: "container.lg",
+          xl: "1200",
+        }}
+      >
+        <Text fontSize="lg" fontWeight="medium" my="20" letterSpacing="wide">
+          Read my thoughts.
+        </Text>
         {posts.map((post) => (
           <Link href={`blogs/${post.slug}`} key={post._id}>
             <a>

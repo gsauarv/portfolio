@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Flex } from "@chakra-ui/layout";
 
 const DrawerLink = ({ linkName, linkPath }) => {
   return (
@@ -11,7 +12,18 @@ const DrawerLink = ({ linkName, linkPath }) => {
       transition={{ ease: "easeOut", duration: 0.1 }}
     >
       <Link href={linkPath}>
-        <a>{linkName}</a>
+        <a>
+          <Flex
+            _hover={{
+              backgroundColor: "#212d3d",
+              borderRadius: 10,
+            }}
+            px="2"
+            py="2"
+          >
+            {linkName}
+          </Flex>
+        </a>
       </Link>
     </motion.ul>
   );

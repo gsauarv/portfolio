@@ -35,7 +35,14 @@ const Navbar = () => {
   const btnRef = useRef();
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Container maxWidth="container.xl" mt="5">
+    <Container
+      maxWidth={{
+        base: "container.sm",
+        md: "container.lg",
+        xl: "1200",
+      }}
+      mt="5"
+    >
       <Flex justify="space-between">
         {/* <Image src={logo} height={10}></Image> */}
         <Heading>Ghimire</Heading>

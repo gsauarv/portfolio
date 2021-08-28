@@ -15,15 +15,36 @@ import Image from "next/image";
 import AuthorAvatar from "./AuthorAvatar";
 import { motion } from "framer-motion";
 import { fadeInUp } from "./Animation";
+import { useColorMode } from "@chakra-ui/color-mode";
+
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+};
+
 const BlogDetailsComponent = ({
   blogDescription,
   blogTitle,
   body,
   mainImage,
 }) => {
+  const { colorMode } = useColorMode();
+  console.log(colorMode);
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
-      <Container maxW="container.xl" mt="20">
+      <Container
+        maxWidth={{
+          base: "container.sm",
+          md: "container.lg",
+          xl: "1200",
+        }}
+        mt="20"
+      >
         {/* Tooltip to show the purpose of the icon button */}
         <Tooltip hasArrow label="Go back to blogs">
           <Link href="/blogs">
@@ -40,7 +61,7 @@ const BlogDetailsComponent = ({
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <Box height="xl" mt="10" overflow="hidden">
+          {/* <Box height="xl" mt="10" overflow="hidden">
             <Image
               src={mainImage}
               width="3"
@@ -48,7 +69,7 @@ const BlogDetailsComponent = ({
               layout="responsive"
               alt="mainImage"
             />
-          </Box>
+          </Box> */}
         </motion.div>
         {/* Heading of the blog */}
 
@@ -78,6 +99,7 @@ const BlogDetailsComponent = ({
               blocks={body}
               projectId="myprojectid"
               dataset="mydataset"
+              serializers={serializers}
             ></BlockContent>
           </Container>
         </motion.div>
