@@ -1,4 +1,4 @@
-import { Flex, Box, Text } from "@chakra-ui/react";
+import { Flex, Box, Text, Divider } from "@chakra-ui/react";
 import Image from "next/image";
 
 const BlogsCards = ({
@@ -56,6 +56,7 @@ const BlogsCards = ({
             }}
           >
             {blogTitle}
+            <Divider orientation="horizontal" />
           </Text>
 
           <Text

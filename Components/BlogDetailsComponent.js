@@ -6,6 +6,7 @@ import {
   Box,
   Text,
   Heading,
+  Divider,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { AiOutlineLeft } from "react-icons/ai";
@@ -75,7 +76,7 @@ const BlogDetailsComponent = ({
 
         <motion.div variants={fadeInUp}>
           <Container
-            maxW="65%"
+            maxW={{ base: "100%", md: "70%", xl: "70%" }}
             mt="10"
             mb="36"
             justifyContent="center"
