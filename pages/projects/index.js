@@ -21,7 +21,7 @@ const project = ({ projects }) => {
         <Flex direction="column">
           <motion.div variants={fadeInUp}>
             {projects.map((project) => (
-              <Link href={`projects/${project.slug}`}>
+              <Link href={`projects/${project.slug}`} key={project.projectId}>
                 <a>
                   <BlogsCards
                     blogTitle={project.projectName}
@@ -44,7 +44,8 @@ const project = ({ projects }) => {
 export default project;
 
 export const getStaticProps = async () => {
-  const projects = await sanityClient.fetch(`*[_type == "project"]
+  const projects =
+    await sanityClient.fetch(`*[_type == "project"] |order(publishedAt desc)
   {
     "projectId":_id,
     projectName,
@@ -52,7 +53,7 @@ export const getStaticProps = async () => {
     publishedAt,
     "mainImage" : "",
     "slug" : slug.current,
-    videoUrl
+    
   }`);
 
   return {
