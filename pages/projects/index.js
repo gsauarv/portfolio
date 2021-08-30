@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
 import BlogsCards from "../../Components/BlogsCards";
 import Link from "next/link";
-import sanityClient from "../../Client";
+import { sanityClient } from "../../lib/sanity";
 const project = ({ projects }) => {
   return (
     <motion.div initial="initial" animate="animate" variant={stagger}>
@@ -60,6 +60,6 @@ export const getStaticProps = async () => {
     props: {
       projects,
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 };

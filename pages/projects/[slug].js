@@ -1,22 +1,18 @@
 import { Container, Box } from "@chakra-ui/layout";
 import Vplayer from "../../Components/Vplayer";
-import sanityClient from "../../Client";
 import BlogDetailsComponent from "../../Components/BlogDetailsComponent";
 import { Flex } from "@chakra-ui/react";
+import { sanityClient } from "../../lib/sanity";
 
-const ProjectDetails = ({
-  projectName,
-  projectDesc,
-  publishedAt,
-  videoUrl,
-  body,
-}) => {
+const ProjectDetails = ({ projectName, projectDesc, videoUrl, body }) => {
   return (
     <Container maxW={{ base: "100%", md: "100%", xl: "70%" }}>
       <BlogDetailsComponent
         blogTitle={projectName}
         blogDescription={projectDesc}
         body={body}
+        goToHref="/projects/"
+        goToName="back to projects"
       />
       <Flex
         justify="center"
@@ -40,7 +36,7 @@ const ProjectDetails = ({
 
 export default ProjectDetails;
 
-export const getServerSideProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const slug = params.slug;
   const [projectDetails] = await sanityClient.fetch(
     `*[_type == "project" && slug.current == "${slug}" ]
@@ -57,5 +53,16 @@ export const getServerSideProps = async ({ params }) => {
     props: {
       ...projectDetails,
     },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const projects = await sanityClient.fetch(`*[_type == "projects" ]
+  {
+      'slug': slug.current
+  }`);
+  return {
+    paths: projects.map(({ slug }) => `/blogs/${slug}`),
+    fallback: true,
   };
 };

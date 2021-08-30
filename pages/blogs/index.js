@@ -1,9 +1,9 @@
-import Client from "../../Client";
 import BlogsCards from "../../Components/BlogsCards";
 import Link from "next/link";
 import { Container, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
+import { sanityClient } from "../../lib/sanity";
 
 const Blogs = ({ posts }) => {
   return (
@@ -26,7 +26,7 @@ const Blogs = ({ posts }) => {
                   blogTitle={post.title}
                   publishedAt={post.publishedAt}
                   blogDescription={post.description}
-                  imageSrc={post.mainImage}
+                  imageSrc={post.imageSrc}
                   slug={post.slug}
                 />
               </motion.div>
@@ -41,7 +41,8 @@ const Blogs = ({ posts }) => {
 export default Blogs;
 
 export const getStaticProps = async () => {
-  const posts = await Client.fetch(`*[_type == 'post']  | order(_createdAt desc)
+  const posts =
+    await sanityClient.fetch(`*[_type == 'post']  | order(_createdAt desc)
   {
       _id,
       mainImage,

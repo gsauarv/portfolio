@@ -6,36 +6,28 @@ import {
   Box,
   Text,
   Heading,
-  Divider,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { AiOutlineLeft } from "react-icons/ai";
 import Styles from "../styles/blog.module.css";
-import BlockContent from "@sanity/block-content-to-react";
-import Image from "next/image";
 import AuthorAvatar from "./AuthorAvatar";
 import { motion } from "framer-motion";
 import { fadeInUp } from "./Animation";
 import { useColorMode } from "@chakra-ui/color-mode";
-
-const serializers = {
-  types: {
-    code: (props) => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
-  },
-};
+import { PortableText } from "../lib/sanity";
+import BackButton from "./BackButton";
 
 const BlogDetailsComponent = ({
   blogDescription,
   blogTitle,
   body,
   mainImage,
+  goToName,
+  goToHref,
 }) => {
   const { colorMode } = useColorMode();
   console.log(colorMode);
+
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Container
@@ -47,15 +39,13 @@ const BlogDetailsComponent = ({
         mt="20"
       >
         {/* Tooltip to show the purpose of the icon button */}
-        <Tooltip hasArrow label="Go back to blogs">
-          <Link href="/blogs">
-            <a>
-              <motion.div variants={fadeInUp}>
-                <IconButton mb="10" rounded="3xl" icon={<AiOutlineLeft />} />
-              </motion.div>
-            </a>
-          </Link>
-        </Tooltip>
+        <Link href="/blogs">
+          <a>
+            <motion.div variants={fadeInUp}>
+              <BackButton goToName={goToName} goToHref={goToHref} />
+            </motion.div>
+          </a>
+        </Link>
 
         <motion.div
           initial={{ x: 200, opacity: 0 }}
@@ -98,13 +88,10 @@ const BlogDetailsComponent = ({
             </Text>
             <AuthorAvatar />
 
-            <BlockContent
+            <PortableText
               className={Styles.blockContent}
               blocks={body}
-              projectId="myprojectid"
-              dataset="mydataset"
-              serializers={serializers}
-            ></BlockContent>
+            ></PortableText>
           </Container>
         </motion.div>
       </Container>

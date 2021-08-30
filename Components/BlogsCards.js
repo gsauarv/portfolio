@@ -11,7 +11,7 @@ const BlogsCards = ({
   return (
     <>
       <Flex
-        height={{ base: "100%", md: "100%", lg: "60" }}
+        height={{ base: "100%", md: "100%", lg: "100%" }}
         borderRadius="lg"
         gridGap="20"
         mt="10"
@@ -30,17 +30,21 @@ const BlogsCards = ({
         ) : (
           <Box
             w={{ base: "sm", lg: "sm" }}
-            height={{ base: "250", sm: "auto", lg: "auto" }}
+            height={{ base: "250", sm: "auto", lg: "250" }}
             background="gray.400"
             overflow="hidden"
             borderRadius="lg"
           >
-            {/* <Image
-            src={imageSrc}
-            width="3"
-            height="3"
-            layout="responsive"
-          ></Image> */}
+            <Image
+              src={imageSrc}
+              width="3"
+              height="3"
+              layout="responsive"
+              quality="50"
+              alt={imageSrc}
+              objectFit="cover"
+              display="block"
+            ></Image>
           </Box>
         )}
 
