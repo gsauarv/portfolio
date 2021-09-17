@@ -39,13 +39,15 @@ const BlogDetailsComponent = ({
         mt="20"
       >
         {/* Tooltip to show the purpose of the icon button */}
-        <Link href="/blogs">
-          <a>
-            <motion.div variants={fadeInUp}>
-              <BackButton goToName={goToName} goToHref={goToHref} />
-            </motion.div>
-          </a>
-        </Link>
+        <Box maxW={{ base: "50%", lg: "10%", xl: "20%" }}>
+          <Link href="/blogs">
+            <a width="10%">
+              <motion.div variants={fadeInUp}>
+                <BackButton goToName={goToName} goToHref={goToHref} />
+              </motion.div>
+            </a>
+          </Link>
+        </Box>
 
         <motion.div
           initial={{ x: 200, opacity: 0 }}
@@ -71,11 +73,11 @@ const BlogDetailsComponent = ({
             mb="36"
             justifyContent="center"
             alignItems="center"
-            textAlign="justify"
+            letterSpacing="wide"
           >
             <Heading
               fontSize="xx-large"
-              letterSpacing="normal"
+              letterSpacing="wide"
               mt="20"
               lineHeight="tall"
               textTransform="capitalize"

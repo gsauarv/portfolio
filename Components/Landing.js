@@ -33,15 +33,14 @@ const Landing = () => {
           </motion.div>
           <motion.div variants={fadeInUp}>
             <Heading
-              letterSpacing="wide"
+              letterSpacing="normal"
               fontWeight="bold"
-              textTransform="capitalize"
-              maxW="70%"
+              maxW={{ base: "100%", xl: "70%", md: "100%" }}
               size="xl"
               lineHeight="tall"
             >
-              passionate {`< React developer />`} from Kathmandu,NP Who loves
-              the blank canvas.
+              A passionate student from Kathmandu,NP Who loves solving the
+              problems and playing minecraft.
             </Heading>
           </motion.div>
 

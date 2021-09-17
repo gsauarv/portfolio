@@ -29,6 +29,7 @@ import { useColorMode, toggleColorMode } from "@chakra-ui/color-mode";
 import DrawerLink from "./DrawerLink";
 // For animation
 
+import Link from "next/link";
 const Navbar = () => {
   // Functions to control the drawer state.
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -45,7 +46,11 @@ const Navbar = () => {
     >
       <Flex justify="space-between">
         {/* <Image src={logo} height={10}></Image> */}
-        <Heading>Ghimire</Heading>
+        <Heading>
+          <Link href="/">
+            <a>Ghimire</a>
+          </Link>
+        </Heading>
         <Flex gridGap="5">
           {/* Button to toggle the colorMode */}
           <Tooltip

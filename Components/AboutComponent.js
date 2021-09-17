@@ -63,6 +63,7 @@ const AboutComponent = () => {
                   width="450"
                   height="800"
                   pt="10"
+                  objectFit="cover"
                   src="https://lh3.googleusercontent.com/pw/AM-JKLVWoCBtjcmbSit-DSnITNH2fJp_WJ_lQQqX7cwPsBLXKIY41ZKYT87Yn566wtRBfszam2jlEPTXctamDtosmXPKbYzcC2SiJDiMl0K-yII7tFG6OF5MlACHmWiISUipbPkLN2FZdCrZS8wHe_ZB4debWQ=w535-h951-no?authuser=0"
                 ></Image>
               </Square>

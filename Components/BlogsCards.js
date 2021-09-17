@@ -11,6 +11,7 @@ const BlogsCards = ({
   return (
     <>
       <Flex
+        boxShadow="xl"
         height={{ base: "100%", md: "100%", lg: "100%" }}
         borderRadius="lg"
         gridGap="20"
@@ -60,8 +61,8 @@ const BlogsCards = ({
             fontWeight="bold"
             textTransform="capitalize"
             casing="lowercase"
+            letterSpacing="wide"
             width={{ base: "100%", md: "100%", lg: "85%" }}
-            textAlign="justify"
             pb="3"
             _hover={{
               textDecoration: "underline",
