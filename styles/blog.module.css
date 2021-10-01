@@ -76,3 +76,32 @@
     font-weight: bold;
   }
 }
+
+@media screen and (min-width: 320px) {
+  .blockContent > p {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .blockContent > h1 {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h2 {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .blockContent > h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}

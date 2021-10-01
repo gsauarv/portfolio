@@ -1,19 +1,9 @@
-import {
-  Container,
-  Tooltip,
-  IconButton,
-  Flex,
-  Box,
-  Text,
-  Heading,
-} from "@chakra-ui/react";
+import { Container, Box, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import { AiOutlineLeft } from "react-icons/ai";
 import Styles from "../styles/blog.module.css";
 import AuthorAvatar from "./AuthorAvatar";
 import { motion } from "framer-motion";
 import { fadeInUp } from "./Animation";
-import { useColorMode } from "@chakra-ui/color-mode";
 import { PortableText } from "../lib/sanity";
 import BackButton from "./BackButton";
 
@@ -21,13 +11,9 @@ const BlogDetailsComponent = ({
   blogDescription,
   blogTitle,
   body,
-  mainImage,
   goToName,
   goToHref,
 }) => {
-  const { colorMode } = useColorMode();
-  console.log(colorMode);
-
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Container
