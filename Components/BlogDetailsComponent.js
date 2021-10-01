@@ -75,7 +75,7 @@ const BlogDetailsComponent = ({
             alignItems="center"
             letterSpacing="wide"
           >
-            <Heading
+            <Text
               fontSize="xx-large"
               letterSpacing="wide"
               mt="20"
@@ -84,7 +84,7 @@ const BlogDetailsComponent = ({
               fontWeight="bold"
             >
               {blogTitle}
-            </Heading>
+            </Text>
             <Text color="gray.500" mt="5" mb="10">
               {blogDescription}
             </Text>
