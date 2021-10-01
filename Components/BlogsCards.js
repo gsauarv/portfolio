@@ -1,6 +1,4 @@
-import { Flex, Box, Text, Divider } from "@chakra-ui/react";
-import Image from "next/image";
-
+import { Flex, Box, Text } from "@chakra-ui/react";
 const BlogsCards = ({
   blogTitle,
   publishedAt,
@@ -9,87 +7,47 @@ const BlogsCards = ({
   slug,
 }) => {
   return (
-    <>
+    <Box shadow="xl" mt="20" py="10" borderRadius="xl">
       <Flex
-        boxShadow="xl"
-        height={{ base: "100%", md: "100%", lg: "100%" }}
-        borderRadius="lg"
-        gridGap="20"
-        mt="10"
-        mb="20"
-        overflow="hidden"
-        flexWrap="wrap"
-        justify="space-between"
-        _hover={{
-          boxShadow: "md",
-          transition: "0.2 fade-in-out",
-          cursor: "pointer",
-        }}
+        w={{ base: "100%", md: "100%", lg: "60%" }}
+        direction="column"
+        mb="10"
+        px="5"
       >
-        {imageSrc.length < 2 ? (
-          <></>
-        ) : (
-          <Box
-            w={{ base: "sm", lg: "sm" }}
-            height={{ base: "250", sm: "auto", lg: "250" }}
-            background="gray.400"
-            overflow="hidden"
-            borderRadius="lg"
-          >
-            <Image
-              src={imageSrc}
-              width="3"
-              height="3"
-              layout="responsive"
-              quality="50"
-              alt={imageSrc}
-              objectFit="cover"
-              display="block"
-            ></Image>
-          </Box>
-        )}
-
-        <Flex
-          w={{ base: "100%", md: "100%", lg: "60%" }}
-          direction="column"
-          mb="10"
-          p="5"
+        <Text
+          letterSpacing="wider"
+          fontSize="xl"
+          fontWeight="bold"
+          textTransform="capitalize"
+          casing="lowercase"
+          letterSpacing="wide"
+          width={{ base: "100%", md: "100%", lg: "85%" }}
+          pb="3"
+          _hover={{
+            textDecoration: "underline",
+            textUnderlineOffset: 4,
+            cursor: "pointer",
+          }}
         >
-          <Text
-            letterSpacing="wider"
-            fontSize="xl"
-            fontWeight="bold"
-            textTransform="capitalize"
-            casing="lowercase"
-            letterSpacing="wide"
-            width={{ base: "100%", md: "100%", lg: "85%" }}
-            pb="3"
-            _hover={{
-              textDecoration: "underline",
-              textUnderlineOffset: 4,
-              cursor: "pointer",
-            }}
-          >
-            {blogTitle}
-          </Text>
+          {blogTitle}
+        </Text>
 
-          <Text
-            width="85%"
-            textAlign="justify"
-            pb="5"
-            color="gray.500"
-            isTruncated
-            letterSpacing="wider"
-          >
-            {blogDescription}
-          </Text>
+        <Text
+          width="85%"
+          textAlign="justify"
+          pb="5"
+          color="gray.500"
+          isTruncated
+          letterSpacing="wider"
+        >
+          {blogDescription}
+        </Text>
 
-          <Text variant="date" color="green.700">
-            {publishedAt}
-          </Text>
-        </Flex>
+        <Text variant="date" color="green.700">
+          {publishedAt}
+        </Text>
       </Flex>
-    </>
+    </Box>
   );
 };
 
