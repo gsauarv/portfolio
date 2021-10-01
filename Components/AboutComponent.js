@@ -26,7 +26,11 @@ const AboutComponent = () => {
         <Box w="100%" pt="100">
           <motion.div variants={stagger}>
             <motion.div variants={fadeInUp}>
-              <Text fontSize="xx-large" letterSpacing="wide" fontWeight="bold">
+              <Text
+                fontSize={{ base: "19px", lg: "28px", md: "24px" }}
+                letterSpacing="wide"
+                fontWeight="bold"
+              >
                 Hi, I&apos;m Saurav Ghimire
               </Text>
             </motion.div>

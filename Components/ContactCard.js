@@ -9,7 +9,11 @@ const ContactCard = () => {
     <motion.div initial="initial" animate="animate" variants={stagger}>
       <Flex marginTop="20" direction="column">
         <motion.div variants={fadeInUp}>
-          <Text fontSize="xx-large" letterSpacing="wide" fontWeight="bold">
+          <Text
+            fontSize={{ base: "19px", lg: "28px", md: "24px" }}
+            letterSpacing="wide"
+            fontWeight="bold"
+          >
             Let&apos;s get in touch.
           </Text>
         </motion.div>
@@ -31,14 +35,7 @@ const ContactCard = () => {
         </motion.div>
 
         <motion.div variants={fadeInUp}>
-          <Text
-            mt="10"
-            mb="2"
-            fontSize="lg"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            color="gray.600"
-          >
+          <Text mt="10" mb="5" fontSize="lg" letterSpacing="wide">
             Social Links
           </Text>
         </motion.div>

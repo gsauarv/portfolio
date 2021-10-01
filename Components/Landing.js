@@ -13,23 +13,17 @@ const Landing = () => {
           md: "container.lg",
           xl: "1200",
         }}
+        height="100vh"
       >
         <Flex
           direction="column"
           justify="center"
-          minHeight="50%"
           height="container.md"
           backgroundSize="cover"
           overflow="hidden"
         >
           <motion.div variants={fadeInUp}>
-            <Text
-              fontSize="md"
-              letterSpacing="wide"
-              pt="5"
-              pb="5"
-              color="gray.500"
-            >
+            <Text fontSize="md" letterSpacing="wide" pb="5" color="gray.500">
               Saurav Ghimire
             </Text>
           </motion.div>
@@ -40,7 +34,7 @@ const Landing = () => {
               maxW={{ base: "100%", xl: "70%", md: "100%" }}
               lineHeight="tall"
               textTransform="capitalize"
-              fontSize="xx-large"
+              fontSize={{ base: "19px", lg: "28px", md: "24px" }}
             >
               A passionate student from Kathmandu,NP Who loves solving the
               problems and playing minecraft.
@@ -104,18 +98,22 @@ const Landing = () => {
                 </Link>
               </motion.div>
               <motion.div variants={fadeInUp}>
-                <Button
-                  size="lg"
-                  fontSize="sm"
-                  _focus={{ outline: 0 }}
-                  letterSpacing="wider"
-                  variant="outline"
-                  // rightIcon={
-                  //   <AiOutlineCloudDownload fontSize="24" fontWeight="bold" />
-                  // }
-                >
-                  Download My CV
-                </Button>
+                <Link href="https://drive.google.com/u/0/uc?id=12yT-Gfko3H5Fbz3Q3-1ezOmRSYnpp8QL&export=download">
+                  <a>
+                    <Button
+                      size="lg"
+                      fontSize="sm"
+                      _focus={{ outline: 0 }}
+                      letterSpacing="wider"
+                      variant="outline"
+                      // rightIcon={
+                      //   <AiOutlineCloudDownload fontSize="24" fontWeight="bold" />
+                      // }
+                    >
+                      Download My CV
+                    </Button>
+                  </a>
+                </Link>
               </motion.div>
             </Flex>
           </motion.div>
