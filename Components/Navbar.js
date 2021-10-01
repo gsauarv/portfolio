@@ -38,13 +38,13 @@ const Navbar = () => {
   return (
     <Container
       maxWidth={{
-        base: "container.sm",
+        base: "100%",
         md: "container.lg",
         xl: "1200",
       }}
       mt="5"
     >
-      <Flex justify="space-between">
+      <Flex justify="space-between" overflow="hidden">
         {/* <Image src={logo} height={10}></Image> */}
         <Heading>
           <Link href="/">

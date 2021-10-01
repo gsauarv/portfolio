@@ -1,6 +1,6 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import SocialLinks from "./SocialLink";
-import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { fadeInUp, stagger } from "./Animation";
 import { motion } from "framer-motion";
 
@@ -32,9 +32,10 @@ const ContactCard = () => {
 
         <motion.div variants={fadeInUp}>
           <Text
-            mt="12"
+            mt="10"
             mb="2"
-            fontSize="xl"
+            fontSize="lg"
+            fontWeight="semibold"
             letterSpacing="wide"
             color="gray.600"
           >
@@ -54,6 +55,12 @@ const ContactCard = () => {
               iconAriaName="Instagram"
               iconName={<AiFillInstagram fontSize="20" />}
               linkButton="https://instagram.com/gh_saurav"
+            />
+
+            <SocialLinks
+              iconAriaName="Youtube"
+              iconName={<AiFillYoutube fontSize="20" />}
+              linkButton="https://www.youtube.com/channel/UClTCDuid2XiJukenc1NRSpQ"
             />
           </Flex>
         </motion.div>

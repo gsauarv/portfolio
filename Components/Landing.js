@@ -3,6 +3,7 @@ import SocialLinks from "./SocialLink";
 import { AiFillGithub, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { stagger, fadeInUp } from "./Animation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const Landing = () => {
   return (
     <motion.div initial="initial" animate="animate" variants={stagger}>
@@ -19,6 +20,7 @@ const Landing = () => {
           minHeight="50%"
           height="container.md"
           backgroundSize="cover"
+          overflow="hidden"
         >
           <motion.div variants={fadeInUp}>
             <Text
@@ -84,16 +86,21 @@ const Landing = () => {
           <motion.div variants={stagger}>
             <Flex pt="5" gridGap="3">
               <motion.div variants={fadeInUp}>
-                <Button
-                  size="lg"
-                  fontSize="sm"
-                  _focus={{ outline: 0 }}
-                  letterSpacing="wider"
-                  colorScheme="green"
-                  // rightIcon={<AiOutlineNodeExpand fontSize="24" fontWeight="bold" />}
-                >
-                  View My Projects
-                </Button>
+                <Link href="/projects">
+                  <a>
+                    <Button
+                      size="lg"
+                      fontSize="sm"
+                      _focus={{ outline: 0 }}
+                      letterSpacing="wider"
+                      colorScheme="green"
+
+                      // rightIcon={<AiOutlineNodeExpand fontSize="24" fontWeight="bold" />}
+                    >
+                      View My Projects
+                    </Button>
+                  </a>
+                </Link>
               </motion.div>
               <motion.div variants={fadeInUp}>
                 <Button

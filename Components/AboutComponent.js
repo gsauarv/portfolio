@@ -1,4 +1,4 @@
-import { Container } from "@chakra-ui/layout";
+import { Circle, Container } from "@chakra-ui/layout";
 import {
   Box,
   Flex,
@@ -16,14 +16,13 @@ const AboutComponent = () => {
   return (
     <Container
       maxWidth={{
-        base: "container.sm",
+        base: "full",
         md: "container.lg",
         xl: "1200",
       }}
-      overflow="auto"
     >
       <motion.div initial="initial" animate="animate">
-        <Box w="80%" pt="100">
+        <Box w="100%" pt="100">
           <motion.div variants={stagger}>
             <motion.div variants={fadeInUp}>
               <Heading fontSize="xx-large" letterSpacing="wide">
@@ -36,7 +35,7 @@ const AboutComponent = () => {
                 pt="5"
                 fontSize="lg"
                 color="gray.600"
-                width={{ base: "sm", md: "md", lg: "md" }}
+                width={{ base: "full", md: "md", lg: "md" }}
               >
                 Currently pursuing a Bachelor in Computer Science at
                 Infrastructure University.
@@ -47,35 +46,37 @@ const AboutComponent = () => {
       </motion.div>
 
       <motion.div variants={stagger}>
-        <Flex mt="100" direction="row" flexWrap="wrap">
+        <Flex
+          mt="100"
+          direction={{ base: "column", md: "row", lg: "row" }}
+          overflow="hidden"
+          gridGap="10"
+        >
           <motion.div initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
-              <Square
+              <Box
                 background="gray.800"
-                overflow="hidden"
-                size={{ base: "sm", md: "md", lg: "md" }}
                 pt="50"
                 mb="100"
+                overflow="auto"
                 borderRadius="lg"
+                w={{ base: "100%", md: "80%", lg: "65%" }}
+                height={{ base: "50%", md: "50%", xl: "50%" }}
               >
-                <Image
+                <img
                   alt="my image"
-                  width="450"
-                  height="800"
-                  pt="10"
-                  objectFit="cover"
                   src="https://lh3.googleusercontent.com/pw/AM-JKLVWoCBtjcmbSit-DSnITNH2fJp_WJ_lQQqX7cwPsBLXKIY41ZKYT87Yn566wtRBfszam2jlEPTXctamDtosmXPKbYzcC2SiJDiMl0K-yII7tFG6OF5MlACHmWiISUipbPkLN2FZdCrZS8wHe_ZB4debWQ=w535-h951-no?authuser=0"
-                ></Image>
-              </Square>
+                ></img>
+              </Box>
             </motion.div>
           </motion.div>
 
           <Flex
             direction="column"
             gridGap="5"
-            width={{ base: "100%", md: "100%", lg: "40%" }}
-            pt={{ xl: 0, sm: 10, md: 10 }}
-            ml={{ base: "0", md: "0", lg: "15%" }}
+            width={{ base: "100%", md: "50%", lg: "50%" }}
+            pt={{ base: 0, md: 10, lg: 10 }}
+            mt={{ base: "0", md: "0", lg: "0" }}
           >
             <motion.div initial="initial" animate="animate" variants={fadeInUp}>
               <Text textAlign="justify" fontSize="md">
