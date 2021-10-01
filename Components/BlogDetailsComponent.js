@@ -62,12 +62,12 @@ const BlogDetailsComponent = ({
             letterSpacing="wide"
           >
             <Text
-              fontSize="x-large"
               letterSpacing="wide"
               mt="20"
               lineHeight="tall"
               textTransform="capitalize"
               fontWeight="bold"
+              fontSize={{ base: "16px", lg: "24px", md: "20px" }}
             >
               {blogTitle}
             </Text>

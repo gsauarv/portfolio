@@ -11,6 +11,9 @@
   letter-spacing: 0.1px;
 }
 
+.heading {
+  font-size: 30px;
+}
 .blockContent > p {
   font-size: 16px;
 }
@@ -78,6 +81,10 @@
 }
 
 @media screen and (min-width: 320px) {
+  .heading {
+    font-size: 16px;
+  }
+
   .blockContent > p {
     font-size: 14px;
     font-weight: normal;
