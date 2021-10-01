@@ -7,7 +7,6 @@
 .blockContent > h3,
 .blockContent > h4,
 .blockContent > blockquote {
-  font-size: 25px;
   margin-bottom: 1em;
   letter-spacing: 0.1px;
 }
@@ -47,4 +46,33 @@
 .blockContent > img {
   height: 100%;
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .blockContent > p {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .blockContent > h1 {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h2 {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .blockContent > h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
 }

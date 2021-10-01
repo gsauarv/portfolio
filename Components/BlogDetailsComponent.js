@@ -76,7 +76,7 @@ const BlogDetailsComponent = ({
             letterSpacing="wide"
           >
             <Text
-              fontSize="xx-large"
+              fontSize="x-large"
               letterSpacing="wide"
               mt="20"
               lineHeight="tall"
@@ -85,7 +85,7 @@ const BlogDetailsComponent = ({
             >
               {blogTitle}
             </Text>
-            <Text color="gray.500" mt="5" mb="10">
+            <Text fontSize="sm" color="gray.500" mt="5" mb="10">
               {blogDescription}
             </Text>
             <AuthorAvatar />
