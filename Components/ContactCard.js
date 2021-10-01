@@ -9,9 +9,9 @@ const ContactCard = () => {
     <motion.div initial="initial" animate="animate" variants={stagger}>
       <Flex marginTop="20" direction="column">
         <motion.div variants={fadeInUp}>
-          <Heading fontSize="xx-large" letterSpacing="wide">
+          <Text fontSize="xx-large" letterSpacing="wide" fontWeight="bold">
             Let&apos;s get in touch.
-          </Heading>
+          </Text>
         </motion.div>
         <motion.div variants={fadeInUp}>
           <Text

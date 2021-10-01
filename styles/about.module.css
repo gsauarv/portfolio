@@ -1,0 +1,52 @@
+.divImg {
+  /* background="gray.800"
+                pt="50"
+                mb="100"
+                overflow="auto"
+                borderRadius="lg"
+                w={{ base: "100%", md: "80%", lg: "65%" }}
+                height={{ base: "50%", md: "50%", xl: "50%" }} */
+
+  margin-top: 10px;
+  margin-bottom: 100px;
+  overflow: hidden;
+  border-radius: 20px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.mainImage {
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  .divImg {
+    width: 350px;
+    height: 450px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .divImg {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .divImg {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .divImg {
+    width: 450px;
+    height: 450px;
+    margin-top: 40px;
+  }
+}

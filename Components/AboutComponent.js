@@ -9,6 +9,7 @@ import {
   Square,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import style from "../styles/about.module.css";
 import Image from "next/image";
 import { stagger, fadeInUp } from "./Animation";
 import { motion } from "framer-motion";
@@ -25,9 +26,9 @@ const AboutComponent = () => {
         <Box w="100%" pt="100">
           <motion.div variants={stagger}>
             <motion.div variants={fadeInUp}>
-              <Heading fontSize="xx-large" letterSpacing="wide">
+              <Text fontSize="xx-large" letterSpacing="wide" fontWeight="bold">
                 Hi, I&apos;m Saurav Ghimire
-              </Heading>
+              </Text>
             </motion.div>
 
             <motion.div variants={fadeInUp}>
@@ -54,29 +55,23 @@ const AboutComponent = () => {
         >
           <motion.div initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
-              <Box
-                background="gray.800"
-                pt="50"
-                mb="100"
-                overflow="auto"
-                borderRadius="lg"
-                w={{ base: "100%", md: "80%", lg: "65%" }}
-                height={{ base: "50%", md: "50%", xl: "50%" }}
-              >
+              <div className={style.divImg}>
                 <img
+                  className={style.mainImage}
                   alt="my image"
                   src="https://lh3.googleusercontent.com/pw/AM-JKLVWoCBtjcmbSit-DSnITNH2fJp_WJ_lQQqX7cwPsBLXKIY41ZKYT87Yn566wtRBfszam2jlEPTXctamDtosmXPKbYzcC2SiJDiMl0K-yII7tFG6OF5MlACHmWiISUipbPkLN2FZdCrZS8wHe_ZB4debWQ=w535-h951-no?authuser=0"
                 ></img>
-              </Box>
+              </div>
             </motion.div>
           </motion.div>
 
           <Flex
             direction="column"
             gridGap="5"
-            width={{ base: "100%", md: "50%", lg: "50%" }}
+            width={{ base: "100%", md: "50%", lg: "40%" }}
             pt={{ base: 0, md: 10, lg: 10 }}
             mt={{ base: "0", md: "0", lg: "0" }}
+            ml={{ base: "0", md: "10px", lg: "150px" }}
           >
             <motion.div initial="initial" animate="animate" variants={fadeInUp}>
               <Text textAlign="justify" fontSize="md">
