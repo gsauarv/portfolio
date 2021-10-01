@@ -67,7 +67,7 @@ const BlogDetailsComponent = ({
               lineHeight="tall"
               textTransform="capitalize"
               fontWeight="bold"
-              fontSize={{ base: "16px", lg: "24px", md: "20px" }}
+              fontSize={{ base: "19px", lg: "24px", md: "20px" }}
             >
               {blogTitle}
             </Text>
