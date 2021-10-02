@@ -7,7 +7,7 @@ export default function Home() {
         <title>🏠Homepage | Sauru Welcome You</title>
         <meta
           name="description"
-          content="Hi, Sauru welcome you to his porfolio,in here he post his  blogs,projects,and anything he feels right 😁"
+          content="Hi, Saurav Ghimire welcome you to his porfolio,in here he post his  blogs,projects,and anything he feels right 😁"
         />
         <meta property="og:title" content="Saurav Ghimire" />
         <meta property="og:description" content="Welcome to my portfolio 👩‍💻" />

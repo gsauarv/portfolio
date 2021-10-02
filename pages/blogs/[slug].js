@@ -7,6 +7,9 @@ import { sanityClient } from "../../lib/sanity";
 
 // Functionall component to get  the sanity api and  display its content.
 
+// managing the seo using the head component provided by the next/head
+import Head from "next/head";
+
 const BlogDetails = ({ title, description, body, mainImage }) => {
   const router = useRouter();
   // Loading screens so that if there are any fallbacks it will show the loading text to the users and
@@ -15,14 +18,25 @@ const BlogDetails = ({ title, description, body, mainImage }) => {
     return <h1>Loading...</h1>;
   }
   return (
-    <BlogDetailsComponent
-      blogTitle={title}
-      blogDescription={description}
-      body={body}
-      mainImage={mainImage}
-      goToHref="/blogs/"
-      goToName="back to blogs"
-    />
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description}></meta>
+        <meta property="og:title" content={title}></meta>
+        <link
+          rel="icon"
+          href="https://cdn-icons-png.flaticon.com/512/2881/2881142.png"
+        />
+      </Head>
+      <BlogDetailsComponent
+        blogTitle={title}
+        blogDescription={description}
+        body={body}
+        mainImage={mainImage}
+        goToHref="/blogs/"
+        goToName="back to blogs"
+      />
+    </>
   );
 };
 
