@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.gsaurav.com.np/</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/projects</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/projects/hungerzone</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/projects/monoalphabetic-encryption-using-python</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/blogs</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/blogs/does-this-works-on-netlify</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/blogs/how-to-install-sanity-io-in-your-projects</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/blogs/how-to-add-things-in-blogs</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.gsaurav.com.np/blogs/the-world-s-50-most-powerful-blogs</loc>
+  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

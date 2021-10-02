@@ -49,7 +49,6 @@ const BlogsCards = ({
           </Text>
         </Flex>
       </Box>
-      <Divider mt="10"></Divider>
     </>
   );
 };
