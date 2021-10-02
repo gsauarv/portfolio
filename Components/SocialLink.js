@@ -3,7 +3,7 @@ import Link from "next/link";
 const SocialLinks = ({ iconAriaName, iconName, linkButton }) => {
   return (
     <Link href={linkButton}>
-      <a target="_blank">
+      <a target="_blank" rel="noopener">
         <IconButton
           aria-label={iconAriaName}
           icon={iconName}
