@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.blockContent > h2,
+.blockContent > h1,
+.blockContent > p,
+.blockContent > h1,
+.blockContent > h3,
+.blockContent > h4,
+.blockContent > blockquote {
+  margin-bottom: 1em;
+  letter-spacing: 0.1px;
+}
+
+.heading {
+  font-size: 30px;
+}
+.blockContent > p {
+  font-size: 16px;
+}
+
+.blockContent > h1 {
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+.blockContent > h3 {
+  font-size: 20px;
+}
+
+.blockContent > h4 {
+  font-size: 15px;
+}
+
+.blockContent > blockquote {
+  font-size: 16px;
+  border-left: 3px solid gray;
+  padding: 10px;
+}
+
+.blockContent > pre {
+  background-color: #212d3d;
+  padding: 20px;
+  color: #eeeeee;
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.blockContent > img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .blockContent > p {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .blockContent > h1 {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h2 {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .blockContent > h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .heading {
+    font-size: 16px;
+  }
+
+  .blockContent > p {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .blockContent > h1 {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h2 {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  .blockContent > h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .blockContent > h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
