@@ -55,6 +55,7 @@ export default function Home({ results }) {
               languageUsed={result.languageUsed}
               refrenceLink={result.refrenceLink}
               relatedResources={result.relatedResources}
+              key={result.id}
             />
           ))}
         </Container>
@@ -66,6 +67,7 @@ export default function Home({ results }) {
 export const getStaticProps = async (context) => {
   const results = [
     {
+      id: 2,
       projectTitle: "HungerZone- a food ordering app.",
       projectDescription:
         "The concept of this project is to help the resturent to take order from their customers through smartphone or laptops.",
@@ -75,6 +77,7 @@ export const getStaticProps = async (context) => {
     },
 
     {
+      id: "1",
       projectTitle: "Learning Rust Lang.",
       projectDescription: "Rust is a system programming language.",
       languageUsed: "Rust",
@@ -83,6 +86,7 @@ export const getStaticProps = async (context) => {
     },
 
     {
+      id: 3,
       projectTitle: "Coding Daily.",
       projectDescription: "Coding daily for 3 hours.Catch me on live stream",
       languageUsed: "Python",
