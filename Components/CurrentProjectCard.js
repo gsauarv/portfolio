@@ -1,9 +1,17 @@
-import { Box, Flex, Link } from "@chakra-ui/layout";
+import { Box, Flex } from "@chakra-ui/layout";
 import PageHeading from "./PageHeading";
-import SocialLinks from "./SocialLink";
-import { AiFillGithub } from "react-icons/ai";
+import { useColorModeValue } from "@chakra-ui/color-mode";
+import { Button } from "@chakra-ui/button";
+import Link from "next/link";
 
-const CurrentProjectCard = () => {
+const CurrentProjectCard = ({
+  projectTitle,
+  projectDescription,
+  languageUsed,
+  refrenceLink,
+  relatedResources,
+}) => {
+  const textColor = useColorModeValue("gray.600", "gray.400");
   return (
     <>
       <Flex
@@ -11,11 +19,11 @@ const CurrentProjectCard = () => {
         align={{ lg: "center", md: "flex-start", base: "flex-start" }}
         gridGap={{ lg: "40", md: "10", base: "10" }}
         paddingTop="5rem"
-        paddingBottom="5rem"
+        pb="2em"
       >
-        <Box maxW={{ lg: "60%", md: "100%", base: "100%" }}>
+        <Box w={{ lg: "60%", md: "100%", base: "100%" }}>
           <PageHeading
-            headingText="HungerZone - a web app to order food."
+            headingText={projectTitle}
             headingSize="xl"
             fontWeightSize="bold"
             styles={{
@@ -23,27 +31,45 @@ const CurrentProjectCard = () => {
             }}
           />
           <PageHeading
-            headingText="The concept of this project is to help the resturent to take order from their customers through smartphone or laptops."
+            headingText={projectDescription}
             headingSize="md"
             fontWeightSize="normal"
+            styles={{
+              color: textColor,
+            }}
           />
-          <Link href="https://nextjs.org" target="_blank" colorScheme="green">
-            NextJs
-          </Link>
+          <Flex gridGap="5" pt="5">
+            <Link href={refrenceLink}>
+              <a target="_blank">
+                <Button
+                  variant="outline"
+                  border="2px"
+                  colorScheme="green"
+                  borderRadius="lg"
+                  fontWeight="semibold"
+                >
+                  {languageUsed}
+                </Button>
+              </a>
+            </Link>
+          </Flex>
         </Box>
         <div>
-          <PageHeading
-            headingText="Follow the process."
-            headingSize="lg"
-            styles={{ paddingBottom: "10px" }}
-          />
-
-          <SocialLinks
-            iconAriaName="github"
-            iconName={<AiFillGithub />}
-            linkButton="https://github.com/gsauarv"
-            iconSize="lg"
-          />
+          <Link href={relatedResources}>
+            <a target="_blank">
+              <Button
+                variant="outline"
+                border="2px"
+                borderTopEndRadius="0px"
+                borderBottomLeftRadius="0px"
+                colorScheme="green"
+                py="6"
+                borderRadius="lg"
+              >
+                Related Resources.
+              </Button>
+            </a>
+          </Link>
         </div>
       </Flex>
     </>

@@ -15,9 +15,9 @@ const DrawerLink = ({ linkName, linkPath }) => {
         <a>
           <Flex
             _hover={{
-              backgroundColor: "#212d3d",
+              backgroundColor: "#9AE6B4",
               borderRadius: 10,
-              color: "white",
+              color: "black",
             }}
             px="2"
             py="2"
