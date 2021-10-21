@@ -8,7 +8,7 @@ const CurrentProjectCard = () => {
     <>
       <Flex
         direction={{ base: "column", lg: "row", md: "column" }}
-        align={{ lg: "center", md: "flex-start", sm: "flex-start" }}
+        align={{ lg: "center", md: "flex-start", base: "flex-start" }}
         gridGap={{ lg: "40", md: "10", base: "10" }}
         paddingTop="5rem"
         paddingBottom="5rem"
