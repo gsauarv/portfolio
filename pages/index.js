@@ -1,5 +1,6 @@
 import Landing from "../Components/Landing";
 import Head from "next/head";
+import CurrentStatus from "../Components/CurrentStatus";
 export default function Home() {
   return (
     <>
@@ -24,6 +25,10 @@ export default function Home() {
         />
       </Head>
       <Landing />
+
+      {/* Current Status goes here!!! */}
+
+      <CurrentStatus />
     </>
   );
 }
