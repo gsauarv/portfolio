@@ -7,13 +7,13 @@ const CurrentProjectCard = () => {
   return (
     <>
       <Flex
-        direction={{ lg: "row", md: "column", sm: "column" }}
+        direction={{ base: "column", lg: "row", md: "column" }}
         align={{ lg: "center", md: "flex-start", sm: "flex-start" }}
-        gridGap={{ lg: "40", md: "40", sm: "10" }}
+        gridGap={{ lg: "40", md: "10", base: "10" }}
         paddingTop="5rem"
         paddingBottom="5rem"
       >
-        <Box maxW={{ lg: "60%", md: "100%", sm: "100%" }}>
+        <Box maxW={{ lg: "60%", md: "100%", base: "100%" }}>
           <PageHeading
             headingText="HungerZone - a web app to order food."
             headingSize="xl"
