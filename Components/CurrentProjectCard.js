@@ -8,10 +8,10 @@ const CurrentProjectCard = ({
   projectTitle,
   projectDescription,
   languageUsed,
-  refrenceLink,
   relatedResources,
 }) => {
   const textColor = useColorModeValue("gray.600", "gray.400");
+  const languages = languageUsed;
   return (
     <>
       <Flex
@@ -39,19 +39,21 @@ const CurrentProjectCard = ({
             }}
           />
           <Flex gridGap="5" pt="5">
-            <Link href={refrenceLink}>
-              <a target="_blank">
+            {languages.map((language) => (
+              <a key={language.length}>
                 <Button
                   variant="outline"
                   border="2px"
                   colorScheme="green"
                   borderRadius="lg"
                   fontWeight="semibold"
+                  cursor="default"
+                  _hover=""
                 >
-                  {languageUsed}
+                  {language}
                 </Button>
               </a>
-            </Link>
+            ))}
           </Flex>
         </Box>
         <div>

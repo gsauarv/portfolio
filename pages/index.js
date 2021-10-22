@@ -4,10 +4,10 @@ import CurrentProjectCard from "../Components/CurrentProjectCard";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import PageHeading from "../Components/PageHeading";
 import { Box, Container } from "@chakra-ui/layout";
+import sanityClient from "../Client";
 export default function Home({ results }) {
   const bg = useColorModeValue("#f3f3f3", "gray.700");
   const textColor = useColorModeValue("#2F855A", "#9AE6B4");
-
   return (
     <>
       <Head>
@@ -50,12 +50,11 @@ export default function Home({ results }) {
 
           {results.map((result) => (
             <CurrentProjectCard
+              key={result.id}
               projectTitle={result.projectTitle}
               projectDescription={result.projectDescription}
               languageUsed={result.languageUsed}
-              refrenceLink={result.refrenceLink}
-              relatedResources={result.relatedResources}
-              key={result.id}
+              relatedResources={result.projectRelatedResources}
             />
           ))}
         </Container>
@@ -65,38 +64,19 @@ export default function Home({ results }) {
 }
 
 export const getStaticProps = async (context) => {
-  const results = [
-    {
-      id: 2,
-      projectTitle: "HungerZone- a food ordering app.",
-      projectDescription:
-        "The concept of this project is to help the resturent to take order from their customers through smartphone or laptops.",
-      languageUsed: "NextJs",
-      refrenceLink: "https://nextjs.org",
-      relatedResources: "https://github.com/gsauarv/hunger_zone",
-    },
-
-    {
-      id: "1",
-      projectTitle: "Learning Rust Lang.",
-      projectDescription: "Rust is a system programming language.",
-      languageUsed: "Rust",
-      refrenceLink: "https://www.rust-lang.org/",
-      relatedResources: "https://github.com/gsauarv/hunger_zone",
-    },
-
-    {
-      id: 3,
-      projectTitle: "Coding Daily.",
-      projectDescription: "Coding daily for 3 hours.Catch me on live stream",
-      languageUsed: "Python",
-      refrenceLink: "https://www.rust-lang.org/",
-      relatedResources: "https://github.com/gsauarv/hunger_zone",
-    },
-  ];
+  const results = await sanityClient.fetch(`*[_type=="upcomingEvents"]
+{
+  "id":_id,
+  projectTitle,
+  projectDescription,
+  languageUsed,
+  projectRelatedResources
+}
+`);
   return {
     props: {
       results,
     },
+    revalidate: 10,
   };
 };
