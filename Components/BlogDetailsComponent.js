@@ -39,22 +39,12 @@ const BlogDetailsComponent = ({
           initial={{ x: 200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-        >
-          {/* <Box height="xl" mt="10" overflow="hidden">
-            <Image
-              src={mainImage}
-              width="3"
-              height="3"
-              layout="responsive"
-              alt="mainImage"
-            />
-          </Box> */}
-        </motion.div>
+        ></motion.div>
         {/* Heading of the blog */}
 
         <motion.div variants={fadeInUp}>
           <Container
-            maxW={{ base: "100%", md: "70%", xl: "70%" }}
+            maxW={{ base: "100%", md: "100%", xl: "80%" }}
             mt="10"
             mb="36"
             justifyContent="center"

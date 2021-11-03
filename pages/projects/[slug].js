@@ -16,7 +16,7 @@ const ProjectDetails = ({ projectName, projectDesc, videoUrl, body }) => {
           href="https://cdn-icons-png.flaticon.com/512/2881/2881142.png"
         />
       </Head>
-      <Container maxW={{ base: "100%", md: "100%", xl: "70%" }}>
+      <Container maxW={{ base: "100%", md: "100%", xl: "80%" }}>
         <BlogDetailsComponent
           blogTitle={projectName}
           blogDescription={projectDesc}
@@ -24,22 +24,26 @@ const ProjectDetails = ({ projectName, projectDesc, videoUrl, body }) => {
           goToHref="/projects/"
           goToName="back to projects"
         />
-        <Flex
+
+        {!videoUrl > 2 ? (
+          <></>
+        ) : (
+          <Box
+            m="auto"
+            maxW={{ base: "100%", md: "100%", xl: "80%" }}
+            h="450px"
+          >
+            <Vplayer videoUrl={videoUrl} />
+          </Box>
+        )}
+        {/* <Flex
           justify="center"
           direction="row"
           alignItems="center"
           alignSelf="center"
           overflow="hidden"
           mb="10"
-        >
-          {!videoUrl > 2 ? (
-            <></>
-          ) : (
-            <Box w="100%" h="450px">
-              <Vplayer videoUrl="https://www.youtube.com/watch?v=2oZTSlpOEeQ" />
-            </Box>
-          )}
-        </Flex>
+        ></Flex> */}
       </Container>
     </>
   );
