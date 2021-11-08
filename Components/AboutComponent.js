@@ -67,6 +67,7 @@ const AboutComponent = () => {
                   quality="80%"
                   alt="my image"
                   src="/me.jpg"
+                  loading="lazy"
                 ></Image>
               </div>
             </motion.div>
