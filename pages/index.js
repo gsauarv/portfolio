@@ -3,7 +3,8 @@ import Head from "next/head";
 import CurrentProjectCard from "../Components/CurrentProjectCard";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import PageHeading from "../Components/PageHeading";
-import { Box, Container } from "@chakra-ui/layout";
+import { Box, Container, Flex } from "@chakra-ui/layout";
+import { AiOutlineDown } from "react-icons/ai";
 import sanityClient from "../Client";
 export default function Home({ results }) {
   const bg = useColorModeValue("#f3f3f3", "gray.700");

@@ -60,11 +60,14 @@ const AboutComponent = () => {
           <motion.div initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
               <div className={style.divImg}>
-                <img
+                <Image
+                  width={1780}
+                  height={3000}
                   className={style.mainImage}
+                  quality="80%"
                   alt="my image"
-                  src="https://lh3.googleusercontent.com/pw/AM-JKLVWoCBtjcmbSit-DSnITNH2fJp_WJ_lQQqX7cwPsBLXKIY41ZKYT87Yn566wtRBfszam2jlEPTXctamDtosmXPKbYzcC2SiJDiMl0K-yII7tFG6OF5MlACHmWiISUipbPkLN2FZdCrZS8wHe_ZB4debWQ=w535-h951-no?authuser=0"
-                ></img>
+                  src="/me.jpg"
+                ></Image>
               </div>
             </motion.div>
           </motion.div>

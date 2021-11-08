@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 768px) {
   .divImg {
-    width: 450px;
+    width: 100%;
     height: 450px;
     margin-top: 40px;
   }

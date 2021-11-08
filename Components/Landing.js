@@ -1,4 +1,4 @@
-import { Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import { Button, Container, Flex, Text } from "@chakra-ui/react";
 import SocialLinks from "./SocialLink";
 import { AiFillGithub, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { stagger, fadeInUp } from "./Animation";
@@ -13,7 +13,6 @@ const Landing = () => {
           md: "container.lg",
           xl: "1200",
         }}
-        height="100vh"
       >
         <Flex
           direction="column"
