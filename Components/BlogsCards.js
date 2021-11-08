@@ -1,11 +1,5 @@
-import { Flex, Box, Text, Divider } from "@chakra-ui/react";
-const BlogsCards = ({
-  blogTitle,
-  publishedAt,
-  blogDescription,
-  imageSrc,
-  slug,
-}) => {
+import { Flex, Box, Text } from "@chakra-ui/react";
+const BlogsCards = ({ blogTitle, publishedAt, blogDescription }) => {
   return (
     <>
       <Box shadow="xl" mt="20" py="10" borderRadius="xl">
@@ -21,7 +15,6 @@ const BlogsCards = ({
             fontWeight="bold"
             textTransform="capitalize"
             casing="lowercase"
-            letterSpacing="wide"
             width={{ base: "100%", md: "100%", lg: "85%" }}
             pb="3"
             _hover={{
