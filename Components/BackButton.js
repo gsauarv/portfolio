@@ -15,7 +15,7 @@ const BackButton = ({ goToHref, goToName }) => {
           <Text
             _hover={{ textDecoration: "underline", textUnderlineOffset: 5 }}
           >
-            {"<-"} {goToName}
+            &#8617; {goToName}
           </Text>
         </Flex>
       </a>
