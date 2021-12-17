@@ -15,7 +15,7 @@
   font-size: 30px;
 }
 .blockContent > p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .blockContent > h1 {
@@ -28,7 +28,7 @@
 }
 
 .blockContent > h4 {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .blockContent > blockquote {
@@ -53,7 +53,7 @@
 
 @media screen and (min-width: 768px) {
   .blockContent > p {
-    font-size: 14px;
+    font-size: 17px;
     font-weight: normal;
   }
 
@@ -86,7 +86,7 @@
   }
 
   .blockContent > p {
-    font-size: 14px;
+    font-size: 17px;
     font-weight: normal;
   }
 
