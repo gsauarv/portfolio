@@ -11,7 +11,7 @@ export default function Home({ results }) {
   return (
     <>
       <Head>
-        <title>Homepage | Sauru Welcome You</title>
+        <title>Saurav Ghimire - Front End Developer & Student</title>
         <meta
           name="description"
           content="Saurav Ghimire is a developer and a student of technology who is passionate and wants to be best."
