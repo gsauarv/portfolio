@@ -64,7 +64,7 @@ const AboutComponent = () => {
                   width={1780}
                   height={3000}
                   className={style.mainImage}
-                  quality="80%"
+                  quality="50"
                   alt="my image"
                   src="/me.jpg"
                   loading="lazy"

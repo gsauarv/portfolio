@@ -1,57 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://www.gsaurav.com.np/</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/projects</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/projects/hungerzone</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/projects/monoalphabetic-encryption-using-python</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/blogs</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/blogs/does-this-works-on-netlify</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/blogs/how-to-install-sanity-io-in-your-projects</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/blogs/how-to-add-things-in-blogs</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://www.gsaurav.com.np/blogs/the-world-s-50-most-powerful-blogs</loc>
-  <lastmod>2021-10-02T08:13:44+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.gsaurav.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-05T16:22:50.324Z</lastmod></url>
+<url><loc>https://www.gsaurav.com/about</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-05T16:22:50.325Z</lastmod></url>
+<url><loc>https://www.gsaurav.com/blogs</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-05T16:22:50.325Z</lastmod></url>
+<url><loc>https://www.gsaurav.com/contact</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-05T16:22:50.325Z</lastmod></url>
+<url><loc>https://www.gsaurav.com/projects</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-05T16:22:50.325Z</lastmod></url>
+<url><loc>https://www.gsaurav.com/blogs/my-take-on-the-history-of-mobile-devices-and-the-evolution-of-mobile-programming</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-05T16:22:50.325Z</lastmod></url>
 </urlset>

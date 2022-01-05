@@ -1,4 +1,4 @@
-import { Flex, Container } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import ContactCard from "../Components/ContactCard";
 import Head from "next/head";
 
@@ -9,7 +9,7 @@ const Contact = () => {
         <title>Contact Me | 📧</title>
         <meta
           name="description"
-          content="Contact Saurav Ghimire through emails and social links."
+          content="Contact Saurav Ghimire using email address:gsaurav2000@gmail.com"
         ></meta>
         <link
           rel="icon"

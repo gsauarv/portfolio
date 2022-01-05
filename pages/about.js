@@ -11,7 +11,7 @@ const About = () => {
         <title>About Saurav</title>
         <meta
           name="description"
-          content="In this page you can learn more things about Saurav Ghimire."
+          content="Saurav Ghimire is a passionate and hardwoking student of technology currently working on getting better."
         ></meta>
         <link
           rel="icon"

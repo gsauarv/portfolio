@@ -4,7 +4,6 @@ import CurrentProjectCard from "../Components/CurrentProjectCard";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import PageHeading from "../Components/PageHeading";
 import { Box, Container, Flex } from "@chakra-ui/layout";
-import { AiOutlineDown } from "react-icons/ai";
 import sanityClient from "../Client";
 export default function Home({ results }) {
   const bg = useColorModeValue("#f3f3f3", "gray.700");
@@ -15,13 +14,15 @@ export default function Home({ results }) {
         <title>Homepage | Sauru Welcome You</title>
         <meta
           name="description"
-          content="Hi,Visit my portfolio for new blogs and find all my projects and stuff."
+          content="Saurav Ghimire is a developer and a student of technology who is passionate and wants to be best."
         />
         <meta property="og:title" content="Saurav Ghimire" />
-        <meta property="og:description" content="Welcome to my portfolio 👩‍💻" />
+        <meta
+          property="og:description"
+          content="Saurav Ghimire is a developer and a student of technology who is passionate and wants to be best."
+        />
         <meta property="og:url" content="https://gsaurav.com.np" />
         <meta property="og:type" content="website" />
-        <meta property="og:" />
 
         <link
           rel="icon"
