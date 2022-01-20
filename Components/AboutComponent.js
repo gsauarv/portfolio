@@ -1,13 +1,5 @@
-import { Circle, Container } from "@chakra-ui/layout";
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Img,
-  Button,
-  Square,
-} from "@chakra-ui/react";
+import { Container } from "@chakra-ui/layout";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import style from "../styles/about.module.css";
 import Image from "next/image";
