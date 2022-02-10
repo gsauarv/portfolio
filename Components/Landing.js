@@ -27,7 +27,7 @@ const Landing = () => {
       >
         <Flex
           direction={{ base: "column-reverse", lg: "row" }}
-          alignItems={"center"}
+          alignItems="start"
         >
           <Flex
             direction="column"
@@ -51,7 +51,7 @@ const Landing = () => {
             <motion.div variants={fadeInUp}>
               <Text
                 color={"gray.300"}
-                w={{ base: "100%", lg: "80%" }}
+                maxW={{ base: "100%", lg: "70%" }}
                 fontSize={"md"}
               >
                 I&apos;m a developer and a student of technology. I work at{" "}
@@ -153,14 +153,17 @@ const Landing = () => {
           </Flex>
 
           {/*my profile image container */}
-          <motion.div variants={fadeInUp} style={{ width: "100%" }}>
+          <motion.div
+            variants={fadeInUp}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Image
-              margin={"0"}
               src={"/me.png"}
               alt="Saurav Ghimire"
-              borderRadius="full"
+              margin="0"
+              padding={"0"}
               mx={{ base: "auto", lg: "0" }}
-              boxSize={{ base: "xs", lg: "md" }}
+              boxSize={{ base: "xs", lg: "xs" }}
             ></Image>
           </motion.div>
         </Flex>
