@@ -6,6 +6,7 @@ import {
   Circle,
   Box,
   Link,
+  useColorModeValue,
   Image,
 } from "@chakra-ui/react";
 import SocialLinks from "./SocialLink";
@@ -16,6 +17,9 @@ import { motion } from "framer-motion";
 // landing function exported here
 
 const Landing = () => {
+  const textColor = useColorModeValue("gray.600", "gray.300");
+  const linkColor = useColorModeValue("purple.800", "purple.400");
+
   return (
     <motion.div initial="initial" animate="animate" variants={stagger}>
       <Container
@@ -41,7 +45,7 @@ const Landing = () => {
                 fontSize="xl"
                 letterSpacing="wide"
                 pb="5"
-                color="gray.100"
+                color={textColor}
                 fontWeight={"bold"}
               >
                 Hi,I am Saurav Ghimire.
@@ -50,13 +54,13 @@ const Landing = () => {
 
             <motion.div variants={fadeInUp}>
               <Text
-                color={"gray.300"}
+                color={textColor}
                 maxW={{ base: "100%", lg: "70%" }}
                 fontSize={"md"}
               >
                 I&apos;m a developer and a student of technology. I work at{" "}
                 <t />
-                <Link color={"purple.400"}>
+                <Link color={linkColor}>
                   <a
                     target={"_blank"}
                     rel={"noopener noreferrer"}
@@ -66,7 +70,7 @@ const Landing = () => {
                   </a>
                 </Link>
                 as a full stack developer and also a part of core management
-                team. Having fun while bulding is my passion. I also a great
+                team. Having fun while bulding is my passion. I'm also a great
                 learner and reader who love to learn new things.
               </Text>
             </motion.div>
