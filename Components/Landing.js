@@ -3,6 +3,7 @@ import {
   Container,
   Flex,
   Text,
+  Circle,
   Box,
   Link,
   Image,
@@ -152,15 +153,16 @@ const Landing = () => {
           </Flex>
 
           {/*my profile image container */}
-
-          <Image
-            margin={"0"}
-            src={"/me.png"}
-            alt="Saurav Ghimire"
-            borderRadius="full"
-            mx={{ base: "auto", lg: "0" }}
-            boxSize={{ base: "xs", lg: "md" }}
-          ></Image>
+          <motion.div variants={fadeInUp} style={{ width: "100%" }}>
+            <Image
+              margin={"0"}
+              src={"/me.png"}
+              alt="Saurav Ghimire"
+              borderRadius="full"
+              mx={{ base: "auto", lg: "0" }}
+              boxSize={{ base: "xs", lg: "md" }}
+            ></Image>
+          </motion.div>
         </Flex>
       </Container>
     </motion.div>
