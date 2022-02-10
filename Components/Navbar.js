@@ -30,6 +30,7 @@ import DrawerLink from "./DrawerLink";
 // For animation
 
 import Link from "next/link";
+import Image from "next/image";
 const Navbar = () => {
   // Functions to control the drawer state.
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,7 +49,14 @@ const Navbar = () => {
         {/* <Image src={logo} height={10}></Image> */}
         <Heading>
           <Link href="/">
-            <a>Ghimire</a>
+            <a>
+              <Image
+                src={"/logo.svg"}
+                alt="Saurav Ghimire"
+                width={"80"}
+                height="80"
+              ></Image>
+            </a>
           </Link>
         </Heading>
         <Flex gridGap="5">
