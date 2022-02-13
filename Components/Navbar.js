@@ -51,10 +51,11 @@ const Navbar = () => {
           <Link href="/">
             <a>
               <Image
-                src={"/logo.svg"}
+                src={"/logo1.svg"}
                 alt="Saurav Ghimire"
-                width={"80"}
-                height="80"
+                width={"50"}
+                height="50"
+                quality={100}
               ></Image>
             </a>
           </Link>
