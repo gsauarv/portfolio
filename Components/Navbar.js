@@ -54,7 +54,7 @@ const Navbar = () => {
                 src={"/logo1.svg"}
                 alt="Saurav Ghimire"
                 width={"50"}
-                height="50"
+                height={"50"}
                 quality={100}
               ></Image>
             </a>
