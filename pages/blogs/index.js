@@ -16,10 +16,7 @@ const Blogs = ({ posts }) => {
           content="In this page you can read my thoughts through the blog I've written."
         ></meta>
         <meta property="og:title" content="Saurav's Blogs"></meta>
-        <link
-          rel="icon"
-          href="https://cdn-icons-png.flaticon.com/512/2881/2881142.png"
-        />
+        <link rel="icon" href="./logo1.svg" />
       </Head>
       <motion.div initial="initial" animate="animate" variants={stagger}>
         <Container

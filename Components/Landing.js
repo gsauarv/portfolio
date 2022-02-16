@@ -10,32 +10,33 @@ import {
   Image,
 } from "@chakra-ui/react";
 import SocialLinks from "./SocialLink";
-import { AiFillGithub, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillInstagram,
+  AiFillYoutube,
+  AiFillLinkedin,
+} from "react-icons/ai";
 import { stagger, fadeInUp } from "./Animation";
 import { motion } from "framer-motion";
+import ContainerComponents from "./ContainerComponents";
 
 // landing function exported here
 
 const Landing = () => {
   const textColor = useColorModeValue("gray.600", "gray.300");
+  const pcolor = useColorModeValue("gray.600", "gray.400");
   const linkColor = useColorModeValue("purple.800", "purple.400");
 
   return (
     <motion.div initial="initial" animate="animate" variants={stagger}>
-      <Container
-        maxWidth={{
-          base: "100%",
-          md: "container.lg",
-          xl: "1200",
-        }}
-      >
+      <ContainerComponents>
         <Flex
           direction={{ base: "column-reverse", lg: "row" }}
           alignItems="start"
         >
           <Flex
             direction="column"
-            my={{ base: "0", lg: "5" }}
+            my={{ base: "0", lg: "20" }}
             mb={{ base: "20", lg: "10" }}
             textAlign={{ base: "center", lg: "left" }}
           >
@@ -54,7 +55,7 @@ const Landing = () => {
 
             <motion.div variants={fadeInUp}>
               <Text
-                color={textColor}
+                color={pcolor}
                 maxW={{ base: "100%", lg: "70%" }}
                 fontSize={"md"}
               >
@@ -110,6 +111,14 @@ const Landing = () => {
                   linkButton="https://instagram.com/gh_saurav"
                 />
               </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <SocialLinks
+                  iconAriaName="linkedin"
+                  iconName={<AiFillLinkedin />}
+                  linkButton="https://bit.ly/3JoLw6P"
+                />
+              </motion.div>
             </Flex>
 
             <motion.div variants={stagger}>
@@ -117,42 +126,7 @@ const Landing = () => {
                 pt="5"
                 gridGap="3"
                 justifyContent={{ base: "center", lg: "start" }}
-              >
-                <motion.div variants={fadeInUp}>
-                  <Link href="/projects" _hover={{ textDecoration: "none" }}>
-                    <Button
-                      size="lg"
-                      fontSize="sm"
-                      _focus={{ outline: 0 }}
-                      letterSpacing="wider"
-                      colorScheme="green"
-                    >
-                      View My Projects
-                    </Button>
-                  </Link>
-                </motion.div>
-                <motion.div variants={fadeInUp}>
-                  <Link
-                    href="https://drive.google.com/u/0/uc?id=12yT-Gfko3H5Fbz3Q3-1ezOmRSYnpp8QL&export=download"
-                    _hover={{ textDecoration: "none" }}
-                  >
-                    <a>
-                      <Button
-                        size="lg"
-                        fontSize="sm"
-                        _focus={{ outline: 0 }}
-                        letterSpacing="wider"
-                        variant="outline"
-                        // rightIcon={
-                        //   <AiOutlineCloudDownload fontSize="24" fontWeight="bold" />
-                        // }
-                      >
-                        Download My CV
-                      </Button>
-                    </a>
-                  </Link>
-                </motion.div>
-              </Flex>
+              ></Flex>
             </motion.div>
           </Flex>
 
@@ -162,7 +136,7 @@ const Landing = () => {
             style={{ width: "100%", height: "100%" }}
           >
             <Image
-              src={"/me.png"}
+              src={"/logo3.png"}
               alt="Saurav Ghimire"
               margin="0"
               padding={"0"}
@@ -171,7 +145,7 @@ const Landing = () => {
             ></Image>
           </motion.div>
         </Flex>
-      </Container>
+      </ContainerComponents>
     </motion.div>
   );
 };
