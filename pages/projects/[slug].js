@@ -11,10 +11,7 @@ const ProjectDetails = ({ projectName, projectDesc, videoUrl, body }) => {
       <Head>
         <title>{projectName}</title>
         <meta name="description" content={projectDesc}></meta>
-        <link
-          rel="icon"
-          href="https://cdn-icons-png.flaticon.com/512/2881/2881142.png"
-        />
+        <link rel="icon" href="./logo.svg" />
       </Head>
       <Container maxW={{ base: "100%", md: "100%", xl: "80%" }}>
         <BlogDetailsComponent

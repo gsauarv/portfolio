@@ -8,7 +8,12 @@ import { Text } from "@chakra-ui/layout";
 const PageHeading = ({ headingText, headingSize, fontWeightSize, styles }) => {
   return (
     <>
-      <Text fontSize={headingSize} fontWeight={fontWeightSize} {...styles}>
+      <Text
+        mt={"10"}
+        fontSize={headingSize}
+        fontWeight={fontWeightSize}
+        {...styles}
+      >
         {headingText}
       </Text>
     </>

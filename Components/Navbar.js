@@ -40,8 +40,8 @@ const Navbar = () => {
     <Container
       maxWidth={{
         base: "100%",
-        md: "container.lg",
-        xl: "1200",
+        md: "container.md",
+        lg: "container.lg",
       }}
       mt="5"
     >

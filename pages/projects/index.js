@@ -14,10 +14,7 @@ const project = ({ projects }) => {
           name="description"
           content="In this page you can look at some of my handpicken projects."
         ></meta>
-        <link
-          rel="icon"
-          href="https://cdn-icons-png.flaticon.com/512/2881/2881142.png"
-        />
+        <link rel="icon" href="./logo1.svg" />
       </Head>
       <motion.div initial="initial" animate="animate" variant={stagger}>
         <Container

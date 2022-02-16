@@ -8,15 +8,12 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About Saurav</title>
+        <title>Learn who is Saurav Ghimire</title>
         <meta
           name="description"
           content="Saurav Ghimire is a passionate and hardwoking student of technology currently working on getting better."
         ></meta>
-        <link
-          rel="icon"
-          href="https://cdn-icons-png.flaticon.com/512/2881/2881142.png"
-        />
+        <link rel="icon" href="./logo1.svg" />
       </Head>
       <AboutComponent />
     </>

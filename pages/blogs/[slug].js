@@ -23,10 +23,7 @@ const BlogDetails = ({ title, description, body, mainImage }) => {
         <title>{title}</title>
         <meta name="description" content={description}></meta>
         <meta property="og:title" content={title}></meta>
-        <link
-          rel="icon"
-          href="https://cdn-icons-png.flaticon.com/512/2881/2881142.png"
-        />
+        <link rel="icon" href="./logo1.svg" />
       </Head>
       <BlogDetailsComponent
         blogTitle={title}
