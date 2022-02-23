@@ -2,16 +2,16 @@ import Landing from "../Components/Landing";
 import Head from "next/head";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import PageHeading from "../Components/PageHeading";
-import { Box, Container, Text } from "@chakra-ui/react";
-import sanityClient from "../Client";
+import { Box, Text } from "@chakra-ui/react";
 import SkillsComponents from "../Components/SkillsComponents";
 import Card from "../Components/Card";
 import ContainerComponents from "../Components/ContainerComponents";
 import BlogCards from "../Components/BlogCards";
 import Link from "next/link";
+import { fetchProject, fetchBlog } from "../utils/Client";
 
 // Home function exported as default
-export default function Home({ results }) {
+export default function Home({ project, blogs }) {
   // colo mode hooks and color mode value
   const bg = useColorModeValue("#f3f3f3", "gray.700");
   const textColor = useColorModeValue("gray.800", "gray.200");
@@ -60,8 +60,13 @@ export default function Home({ results }) {
             ></PageHeading>
 
             {/* Project Card */}
-            <Card />
-            <Card />
+            {project.map((post) => (
+              <Card
+                key={post.sys.id}
+                projectTitle={post.fields.projectTitle}
+                projectDesc={post.fields.projectDescription}
+              />
+            ))}
           </Box>
 
           {/* Recent Blogs */}
@@ -76,9 +81,15 @@ export default function Home({ results }) {
             ></PageHeading>
 
             {/* blog cards */}
-            <BlogCards />
-            <BlogCards />
-
+            {blogs.map((blog) => (
+              <BlogCards
+                key={blog.sys.id}
+                blogTitle={blog.fields.blogTitle}
+                blogDesc={blog.fields.blogDescription}
+                publishedDate={blog.fields.publishedDate}
+                readingTime={blog.fields.readingTime}
+              />
+            ))}
             <Box mt={"5"}>
               <Link href="/blogs">
                 <Text
@@ -95,55 +106,19 @@ export default function Home({ results }) {
           </Box>
         </Box>
       </ContainerComponents>
-
-      {/* Current Status goes here!!! */}
-      {/* <Box pb="50px">
-        <Container
-          maxWidth={{
-            base: "100%",
-            md: "container.lg",
-            xl: "1200",
-          }}
-        >
-          <PageHeading
-            headingText="Ongoing Projects and Activities."
-            headingSize="xl"
-            fontWeightSize="bold"
-            styles={{
-              paddingTop: "50px",
-              color: textColor,
-            }}
-          />
-
-          {results.map((result) => (
-            <CurrentProjectCard
-              key={result.id}
-              projectTitle={result.projectTitle}
-              projectDescription={result.projectDescription}
-              languageUsed={result.languageUsed}
-              relatedResources={result.projectRelatedResources}
-            />
-          ))}
-        </Container>
-      </Box> */}
     </>
   );
 }
 
 export const getStaticProps = async (context) => {
-  const results = await sanityClient.fetch(`*[_type=="upcomingEvents"]
-{
-  "id":_id,
-  projectTitle,
-  projectDescription,
-  languageUsed,
-  projectRelatedResources
-}
-`);
+  const currentProject = await fetchProject();
+  const blogs = await fetchBlog();
+  console.log(blogs);
+
   return {
     props: {
-      results,
+      project: currentProject,
+      blogs: blogs,
     },
-    revalidate: 5,
   };
 };
