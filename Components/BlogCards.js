@@ -1,7 +1,7 @@
 import { Box, Circle, Divider, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 
-function BlogCards() {
+function BlogCards({ blogTitle, blogDesc, publishedDate, readingTime }) {
   const date = new Date();
   return (
     <div>
@@ -24,7 +24,7 @@ function BlogCards() {
           fontWeight={"bold"}
           colorScheme={"whiteAlpha"}
         >
-          How to create a React App using create-react-app
+          {blogTitle}
         </Text>
 
         {/* date and read status */}
@@ -35,17 +35,16 @@ function BlogCards() {
           fontSize={{ base: "x-small", md: "sm" }}
         >
           <Text color={"gray.600"} my="3">
-            {date.toDateString()}
+            {publishedDate.split("T")[0]}
           </Text>
           <Circle size={"2"} bg={"gray.600"} />
           <Text color={"gray.600"} my="3">
-            2 min read
+            {readingTime}
           </Text>
         </Flex>
 
         <Text color={"gray.600"} fontSize={{ base: "sm", md: "md" }}>
-          My Take On The History Of Mobile Devices And The Evolution Of Mobile
-          Programming.{" "}
+          {blogDesc}
         </Text>
       </Box>
     </div>

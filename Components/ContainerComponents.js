@@ -6,7 +6,7 @@ function ContainerComponents({ children }) {
       maxWidth={{
         base: "100%",
         md: "container.md",
-        lg: "container.lg",
+        lg: "1000px",
       }}
     >
       {children}

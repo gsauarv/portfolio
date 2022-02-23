@@ -1,7 +1,7 @@
 import { Box, SlideFade, keyframes, Text } from "@chakra-ui/react";
 import React from "react";
 
-function Card() {
+function Card({ projectTitle, projectDesc }) {
   return (
     <Box
       shadow="base"
@@ -24,13 +24,11 @@ function Card() {
         fontWeight={"bold"}
         color={"white"}
       >
-        Beginners guide to ReactJs
+        {projectTitle}
       </Text>
 
       <Text color={"gray.400"} my="3" fontSize={{ base: "sm", md: "md" }}>
-        In this course, we will learn the basic introduction of ReactJs like
-        create-react-app,jsx,components,data fetching and more. Also we will
-        learn how to deploy the application on vercel.
+        {projectDesc}
       </Text>
     </Box>
   );
