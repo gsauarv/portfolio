@@ -1,6 +1,6 @@
-import { Container } from "@chakra-ui/react";
 import ContactCard from "../Components/ContactCard";
 import Head from "next/head";
+import ContainerComponents from "../Components/ContainerComponents";
 
 const Contact = () => {
   return (
@@ -13,7 +13,7 @@ const Contact = () => {
         ></meta>
         <link rel="icon" href="./logo1.svg" />
       </Head>
-      <Container
+      <ContainerComponents
         maxWidth={{
           base: "container.sm",
           md: "container.lg",
@@ -21,7 +21,7 @@ const Contact = () => {
         }}
       >
         <ContactCard />
-      </Container>
+      </ContainerComponents>
     </>
   );
 };

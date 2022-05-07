@@ -2,13 +2,8 @@ import { Flex, Box, Text } from "@chakra-ui/react";
 const BlogsCards = ({ blogTitle, publishedAt, blogDescription }) => {
   return (
     <>
-      <Box shadow="xl" mt="20" py="10" borderRadius="xl">
-        <Flex
-          w={{ base: "100%", md: "100%", lg: "60%" }}
-          direction="column"
-          mb="10"
-          px="5"
-        >
+      <Box shadow="lg" borderRadius="xl" px={"2"}>
+        <Flex w={{ base: "100%", md: "100%" }} direction="column" mb="10">
           <Text
             letterSpacing="wider"
             fontSize="xl"

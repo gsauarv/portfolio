@@ -1,4 +1,4 @@
-import { Container, Box, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import Styles from "../styles/blog.module.css";
 import AuthorAvatar from "./AuthorAvatar";
@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { fadeInUp } from "./Animation";
 import { PortableText } from "../lib/sanity";
 import BackButton from "./BackButton";
+import ContainerComponents from ".././Components/ContainerComponents";
 
 const BlogDetailsComponent = ({
   blogDescription,
@@ -16,16 +17,9 @@ const BlogDetailsComponent = ({
 }) => {
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
-      <Container
-        maxWidth={{
-          base: "container.sm",
-          md: "container.lg",
-          xl: "1200",
-        }}
-        mt="20"
-      >
+      <ContainerComponents>
         {/* Tooltip to show the purpose of the icon button */}
-        <Box maxW={{ base: "50%", lg: "10%", xl: "20%" }}>
+        <Box maxW={{ base: "50%", lg: "10%", xl: "20%" }} mt={10}>
           <Link href="/blogs">
             <a width="10%">
               <motion.div variants={fadeInUp}>
@@ -43,14 +37,7 @@ const BlogDetailsComponent = ({
         {/* Heading of the blog */}
 
         <motion.div variants={fadeInUp}>
-          <Container
-            maxW={{ base: "100%", md: "100%", xl: "80%" }}
-            mt="10"
-            mb="36"
-            justifyContent="center"
-            alignItems="center"
-            letterSpacing="wide"
-          >
+          <ContainerComponents>
             <Text
               letterSpacing="wide"
               mt="20"
@@ -65,14 +52,13 @@ const BlogDetailsComponent = ({
               {blogDescription}
             </Text>
             <AuthorAvatar />
-
             <PortableText
               className={Styles.blockContent}
               blocks={body}
             ></PortableText>
-          </Container>
+          </ContainerComponents>
         </motion.div>
-      </Container>
+      </ContainerComponents>
     </motion.div>
   );
 };

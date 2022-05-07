@@ -1,10 +1,12 @@
-import { Container, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
 import BlogsCards from "../../Components/BlogsCards";
 import Link from "next/link";
 import { sanityClient } from "../../lib/sanity";
 import Head from "next/head";
+import ContainerComponents from "../../Components/ContainerComponents";
+import Cards from "../../Components/Card";
 const project = ({ projects }) => {
   return (
     <>
@@ -17,15 +19,13 @@ const project = ({ projects }) => {
         <link rel="icon" href="./logo1.svg" />
       </Head>
       <motion.div initial="initial" animate="animate" variant={stagger}>
-        <Container
-          maxWidth={{
-            base: "container.sm",
-            md: "container.lg",
-            xl: "1200",
-          }}
-          mt="20"
-        >
-          <Text fontSize="lg" fontWeight="medium" my="20" letterSpacing="wide">
+        <ContainerComponents>
+          <Text
+            fontSize="lg"
+            fontWeight="medium"
+            mt={"10"}
+            letterSpacing="wide"
+          >
             Things I&apos;ve Been Working On.
           </Text>
           <Flex direction="column">
@@ -33,7 +33,7 @@ const project = ({ projects }) => {
               {projects.map((project) => (
                 <Link href={`projects/${project.slug}`} key={project.projectId}>
                   <a>
-                    <BlogsCards
+                    <Cards
                       blogTitle={project.projectName}
                       blogDescription={project.projectDesc}
                       key={project.projectId}
@@ -46,7 +46,7 @@ const project = ({ projects }) => {
               ))}
             </motion.div>
           </Flex>
-        </Container>
+        </ContainerComponents>
       </motion.div>
     </>
   );

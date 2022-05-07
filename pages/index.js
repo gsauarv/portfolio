@@ -3,7 +3,6 @@ import Head from "next/head";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import PageHeading from "../Components/PageHeading";
 import { Box, Container, Text } from "@chakra-ui/react";
-import sanityClient from "../Client";
 import SkillsComponents from "../Components/SkillsComponents";
 import Card from "../Components/Card";
 import ContainerComponents from "../Components/ContainerComponents";
@@ -73,7 +72,7 @@ export default function Home({ results }) {
               styles={{
                 color: textColor,
               }}
-            ></PageHeading>
+            />
 
             {/* blog cards */}
             <BlogCards />
@@ -95,55 +94,6 @@ export default function Home({ results }) {
           </Box>
         </Box>
       </ContainerComponents>
-
-      {/* Current Status goes here!!! */}
-      {/* <Box pb="50px">
-        <Container
-          maxWidth={{
-            base: "100%",
-            md: "container.lg",
-            xl: "1200",
-          }}
-        >
-          <PageHeading
-            headingText="Ongoing Projects and Activities."
-            headingSize="xl"
-            fontWeightSize="bold"
-            styles={{
-              paddingTop: "50px",
-              color: textColor,
-            }}
-          />
-
-          {results.map((result) => (
-            <CurrentProjectCard
-              key={result.id}
-              projectTitle={result.projectTitle}
-              projectDescription={result.projectDescription}
-              languageUsed={result.languageUsed}
-              relatedResources={result.projectRelatedResources}
-            />
-          ))}
-        </Container>
-      </Box> */}
     </>
   );
 }
-
-export const getStaticProps = async (context) => {
-  const results = await sanityClient.fetch(`*[_type=="upcomingEvents"]
-{
-  "id":_id,
-  projectTitle,
-  projectDescription,
-  languageUsed,
-  projectRelatedResources
-}
-`);
-  return {
-    props: {
-      results,
-    },
-    revalidate: 5,
-  };
-};

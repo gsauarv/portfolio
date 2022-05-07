@@ -1,19 +1,13 @@
-import { Container } from "@chakra-ui/layout";
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import style from "../styles/about.module.css";
 import Image from "next/image";
 import { stagger, fadeInUp } from "./Animation";
 import { motion } from "framer-motion";
+import ContainerComponents from "../Components/ContainerComponents";
 const AboutComponent = () => {
   return (
-    <Container
-      maxWidth={{
-        base: "full",
-        md: "container.lg",
-        xl: "1200",
-      }}
-    >
+    <ContainerComponents>
       <motion.div initial="initial" animate="animate">
         <Box w="100%" pt="100">
           <motion.div variants={stagger}>
@@ -110,7 +104,7 @@ const AboutComponent = () => {
           </Flex>
         </Flex>
       </motion.div>
-    </Container>
+    </ContainerComponents>
   );
 };
 
