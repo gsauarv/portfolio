@@ -2,7 +2,7 @@ import Landing from "../Components/Landing";
 import Head from "next/head";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import PageHeading from "../Components/PageHeading";
-import { Box, Container, Text } from "@chakra-ui/react";
+import { Box, Container, Grid, Text } from "@chakra-ui/react";
 import SkillsComponents from "../Components/SkillsComponents";
 import Card from "../Components/Card";
 import ContainerComponents from "../Components/ContainerComponents";
@@ -57,10 +57,28 @@ export default function Home({ results }) {
                 color: textColor,
               }}
             ></PageHeading>
+            <Grid
+              templateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,1fr)" }}
+              gap={10}
+            >
+              {/* Project Card */}
+              <Card
+                projectName={"Urbar Nepal"}
+                projectDescription={
+                  "Single page informative website for urbar nepal company using ReactJs,NextJs,Sanity Io."
+                }
+                projectImage={"./project.png"}
+                projectLink={"https://urbarnepal.com.np"}
+              />
 
-            {/* Project Card */}
-            <Card />
-            <Card />
+              <Card
+                projectName={"Urbar Nepal"}
+                projectDescription={
+                  "Single page informative website for urbar nepal company using ReactJs,NextJs,Sanity Io."
+                }
+                projectImage={"./project.png"}
+              />
+            </Grid>
           </Box>
 
           {/* Recent Blogs */}

@@ -1,38 +1,41 @@
-import { Box, SlideFade, keyframes, Text } from "@chakra-ui/react";
+import {
+  Box,
+  SlideFade,
+  keyframes,
+  Text,
+  Image,
+  Link,
+  Button,
+} from "@chakra-ui/react";
 import React from "react";
 
-function Card() {
+function Card({ projectName, projectLink, projectDescription, projectImage }) {
   return (
-    <Box
-      shadow="base"
-      bg="gray.700"
-      m="2"
-      p={"5"}
-      mt={"10"}
-      mb={"5"}
-      rounded="md"
-      _hover={{
-        shadow: "2xl",
-        bg: "gray.600",
-        cursor: "pointer",
-        transition: "all 0.3s ease-in-out",
-        transitionProperty: "all",
-      }}
-    >
-      <Text
-        fontSize={{ base: "md", md: "xl" }}
-        fontWeight={"bold"}
-        color={"white"}
-      >
-        Beginners guide to ReactJs
-      </Text>
-
-      <Text color={"gray.400"} my="3" fontSize={{ base: "sm", md: "md" }}>
-        In this course, we will learn the basic introduction of ReactJs like
-        create-react-app,jsx,components,data fetching and more. Also we will
-        learn how to deploy the application on vercel.
-      </Text>
-    </Box>
+    <>
+      <Link href={projectLink} target={"_blank"}>
+        <Box borderRadius={"lg"} overflow={"hidden"} mt={"10"}>
+          <Box>
+            {/* image of the project goes here screenshot */}
+            <Image src={projectImage} alt={projectName} />
+          </Box>
+          <Text
+            fontSize={"18"}
+            fontWeight={"bold"}
+            textTransform={"uppercase"}
+            py={"2"}
+          >
+            {projectName}
+          </Text>
+          <Text
+            fontSize={"14"}
+            textColor={"gray.400"}
+            textTransform={"capitalize"}
+          >
+            {projectDescription}
+          </Text>
+        </Box>
+      </Link>
+    </>
   );
 }
 
