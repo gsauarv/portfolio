@@ -16,7 +16,7 @@ function Card({ projectName, projectLink, projectDescription, projectImage }) {
         <Box borderRadius={"lg"} overflow={"hidden"} mt={"10"}>
           <Box>
             {/* image of the project goes here screenshot */}
-            <Image src={projectImage} alt={projectName} />
+            <Image src={projectImage} alt={projectName} opacity={"70%"} />
           </Box>
           <Text
             fontSize={"18"}

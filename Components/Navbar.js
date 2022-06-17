@@ -11,7 +11,7 @@ import {
   useDisclosure,
   Divider,
   Tooltip,
-  Heading,
+  Box,
 } from "@chakra-ui/react";
 // Chakra Ui Imports ends kinda herer
 
@@ -28,6 +28,7 @@ import { useColorMode, toggleColorMode } from "@chakra-ui/color-mode";
 // Importing the logo from the public folder.
 import DrawerLink from "./DrawerLink";
 // For animation
+import FooterNavLinks from "../Components/FooterNavLinks";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -46,21 +47,27 @@ const Navbar = () => {
       mt="5"
     >
       <Flex justify="space-between" overflow="hidden">
-        {/* <Image src={logo} height={10}></Image> */}
-        <Heading>
-          <Link href="/">
-            <a>
-              <Image
-                src={"/logo1.svg"}
-                alt="Saurav Ghimire"
-                width={"50"}
-                height={"50"}
-                quality={100}
-              ></Image>
-            </a>
-          </Link>
-        </Heading>
+        <Link href="/">
+          <a>
+            <Image
+              src={"/logo3.png"}
+              alt="Saurav Ghimire"
+              width={"70px"}
+              height={"70px"}
+              quality={100}
+            ></Image>
+          </a>
+        </Link>
+
         <Flex gridGap="5">
+          <Box display={{ base: "none", md: "block" }}>
+            <Flex gridGap={"5"}>
+              <DrawerLink linkName={"Home"} linkPath={"/"} />
+              <DrawerLink linkName={"Blogs"} linkPath={"/blogs"} />
+              <DrawerLink linkName={"Projects"} linkPath={"/projects"} />
+              <DrawerLink linkName={"Contact"} linkPath={"/contact"} />
+            </Flex>
+          </Box>
           {/* Button to toggle the colorMode */}
           <Tooltip
             fontSize="xs"
@@ -85,6 +92,7 @@ const Navbar = () => {
               ref={btnRef}
               onClick={onOpen}
               _focus={{ outline: 0 }}
+              display={{ base: "block", md: "none" }}
             />
           </Tooltip>
         </Flex>

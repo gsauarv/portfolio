@@ -1,12 +1,12 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Grid, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
-import BlogsCards from "../../Components/BlogsCards";
 import Link from "next/link";
 import { sanityClient } from "../../lib/sanity";
 import Head from "next/head";
 import ContainerComponents from "../../Components/ContainerComponents";
-import Cards from "../../Components/Card";
+import Card from "../../Components/Card";
+
 const project = ({ projects }) => {
   return (
     <>
@@ -26,26 +26,31 @@ const project = ({ projects }) => {
             mt={"10"}
             letterSpacing="wide"
           >
-            Things I&apos;ve Been Working On.
+            Featured Projects
           </Text>
-          <Flex direction="column">
-            <motion.div variants={fadeInUp}>
-              {projects.map((project) => (
-                <Link href={`projects/${project.slug}`} key={project.projectId}>
-                  <a>
-                    <Cards
-                      blogTitle={project.projectName}
-                      blogDescription={project.projectDesc}
-                      key={project.projectId}
-                      slug={project.slug}
-                      imageSrc={project.mainImage}
-                      publishedAt={project.publishedAt}
-                    />
-                  </a>
-                </Link>
-              ))}
-            </motion.div>
-          </Flex>
+          {/* projects */}
+          <Grid
+            templateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,2fr)" }}
+            gap={10}
+          >
+            <Card
+              projectImage={"./project.png"}
+              projectName={"Urbar Nepal"}
+              projectDescription={"This is the description of the project"}
+            />
+
+            <Card
+              projectImage={"./project.png"}
+              projectName={"Urbar Nepal"}
+              projectDescription={"This is the description of the project"}
+            />
+
+            <Card
+              projectImage={"./project.png"}
+              projectName={"Urbar Nepal"}
+              projectDescription={"This is the description of the project"}
+            />
+          </Grid>
         </ContainerComponents>
       </motion.div>
     </>

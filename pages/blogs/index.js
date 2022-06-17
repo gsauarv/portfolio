@@ -1,4 +1,3 @@
-import BlogsCards from "../../Components/BlogsCards";
 import Link from "next/link";
 import { Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -7,6 +6,7 @@ import { sanityClient } from "../../lib/sanity";
 import Head from "next/head";
 import ContainerComponents from "../../Components/ContainerComponents";
 import Cards from "../../Components/Card";
+import BlogCards from "../../Components/BlogCards";
 const Blogs = ({ posts }) => {
   return (
     <>
@@ -30,17 +30,13 @@ const Blogs = ({ posts }) => {
           <Text fontSize="lg" fontWeight="medium" mt="10" letterSpacing="wide">
             Read my thoughts.
           </Text>
+
+          {/* loop for blogs  */}
           {posts.map((post) => (
             <Link href={`blogs/${post.slug}`} key={post._id}>
               <a>
                 <motion.div variants={fadeInUp}>
-                  <Cards
-                    blogTitle={post.title}
-                    publishedAt={post.publishedAt}
-                    blogDescription={post.description}
-                    imageSrc={post.imageSrc}
-                    slug={post.slug}
-                  />
+                  <BlogCards />
                 </motion.div>
               </a>
             </Link>
