@@ -19,14 +19,6 @@ const ProjectDetails = ({ projectName, projectDesc, videoUrl, body }) => {
         goToHref="/projects/"
         goToName="back to projects"
       />
-
-      {!videoUrl > 2 ? (
-        <></>
-      ) : (
-        <Box m="auto" maxW={{ base: "100%", md: "100%", xl: "80%" }} h="450px">
-          <Vplayer videoUrl={videoUrl} />
-        </Box>
-      )}
     </>
   );
 };
