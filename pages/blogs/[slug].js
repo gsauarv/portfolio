@@ -24,14 +24,7 @@ const BlogDetails = ({ title, description, body, mainImage }) => {
         <meta property="og:title" content={title}></meta>
         <link rel="icon" href="./logo1.svg" />
       </Head>
-      <BlogDetailsComponent
-        blogTitle={title}
-        blogDescription={description}
-        body={body}
-        mainImage={mainImage}
-        goToHref="/blogs/"
-        goToName="back to blogs"
-      />
+      <h1>Hello</h1>
     </>
   );
 };
@@ -43,29 +36,17 @@ export default BlogDetails;
 
 export const getStaticProps = async ({ params }) => {
   const slug = params.slug;
-  const [post] = await sanityClient.fetch(
-    `*[_type == "post" && slug.current == "${slug}"]
-{
-  title,
-  description,
-  body,
-  "mainImage" : mainImage.asset -> url
-}
-  `
-  );
 
   return {
-    props: { ...post },
+    props: {
+      helo: "he",
+    },
   };
 };
 
 export const getStaticPaths = async () => {
-  const posts = await sanityClient.fetch(`*[_type == "post" ]
-  {
-      'slug': slug.current
-  }`);
   return {
-    paths: posts.map(({ slug }) => `/blogs/${slug}`),
+    paths: ["/blogs/hello"],
     fallback: true,
   };
 };

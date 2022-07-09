@@ -4,7 +4,6 @@ import Styles from "../styles/blog.module.css";
 import AuthorAvatar from "./AuthorAvatar";
 import { motion } from "framer-motion";
 import { fadeInUp } from "./Animation";
-import { PortableText } from "../lib/sanity";
 import BackButton from "./BackButton";
 import ContainerComponents from ".././Components/ContainerComponents";
 

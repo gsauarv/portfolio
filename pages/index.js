@@ -8,9 +8,10 @@ import Card from "../Components/Card";
 import ContainerComponents from "../Components/ContainerComponents";
 import BlogCards from "../Components/BlogCards";
 import Link from "next/link";
+import { fetchBlogs, fetchProject } from "../util/contentfulPosts";
 
 // Home function exported as default
-export default function Home({ results }) {
+export default function Home({ blogs, projects }) {
   // colo mode hooks and color mode value
   const bg = useColorModeValue("#f3f3f3", "gray.700");
   const textColor = useColorModeValue("gray.800", "gray.200");
@@ -62,22 +63,16 @@ export default function Home({ results }) {
               gap={10}
             >
               {/* Project Card */}
-              <Card
-                projectName={"Urbar Nepal"}
-                projectDescription={
-                  "Single page informative website for urbar nepal company using ReactJs,NextJs,Sanity Io."
-                }
-                projectImage={"./project.png"}
-                projectLink={"https://urbarnepal.com.np"}
-              />
-
-              <Card
-                projectName={"Urbar Nepal"}
-                projectDescription={
-                  "Single page informative website for urbar nepal company using ReactJs,NextJs,Sanity Io."
-                }
-                projectImage={"./project.png"}
-              />
+              {projects.map((project) => (
+                <div key={project.id}>
+                  <Card
+                    projectName={project.projectTitle}
+                    projectImage={project.heroImage}
+                    projectDescription={project.description}
+                    projectLink={project.projectLink}
+                  />
+                </div>
+              ))}
             </Grid>
           </Box>
 
@@ -115,3 +110,18 @@ export default function Home({ results }) {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const entries = await fetchBlogs();
+  const content = entries.map((entry) => entry.fields);
+  const projects = await fetchProject();
+  const projectContent = projects.map((project) => project.fields);
+
+  return {
+    props: {
+      blogs: content,
+      projects: projectContent,
+    },
+    revalidate: 10,
+  };
+};

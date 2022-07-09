@@ -56,7 +56,6 @@ export default project;
 export async function getStaticProps() {
   const entries = await fetchProject();
   const content = entries.map((entry) => entry.fields);
-  console.log(content);
 
   return {
     props: {

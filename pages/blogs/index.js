@@ -56,7 +56,6 @@ export default Blogs;
 export const getStaticProps = async () => {
   const entries = await fetchBlogs();
   const content = entries.map((entry) => entry.fields);
-  console.log(content);
 
   return {
     props: {

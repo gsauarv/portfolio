@@ -14,12 +14,13 @@ function Card({ projectName, projectLink, projectDescription, projectImage }) {
     <>
       <Link href={projectLink} target={"_blank"}>
         <Box borderRadius={"lg"} overflow={"hidden"} mt={"10"}>
-          <Box>
+          <Box overflow={"hidden"}>
             {/* image of the project goes here screenshot */}
             <Image
               src={"https:" + projectImage.fields.file.url}
               alt={projectName}
               opacity={"70%"}
+              maxH={"64"}
             />
           </Box>
           <Text
