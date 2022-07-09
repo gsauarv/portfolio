@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/layout";
 import BlogDetailsComponent from "../../Components/BlogDetailsComponent";
-import { sanityClient } from "../../lib/sanity";
 import Head from "next/head";
 
 const ProjectDetails = ({ projectName, projectDesc, videoUrl, body }) => {

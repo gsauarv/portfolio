@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { Text } from "@chakra-ui/react";
+import { Grid, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
-import { sanityClient } from "../../lib/sanity";
 import Head from "next/head";
 import ContainerComponents from "../../Components/ContainerComponents";
 import Cards from "../../Components/Card";
 import BlogCards from "../../Components/BlogCards";
-const Blogs = ({ posts }) => {
+import { fetchBlogs } from "../../util/contentfulPosts";
+const Blogs = ({ blogs }) => {
   return (
     <>
       <Head>
@@ -30,17 +30,21 @@ const Blogs = ({ posts }) => {
           <Text fontSize="lg" fontWeight="medium" mt="10" letterSpacing="wide">
             Read my thoughts.
           </Text>
-
-          {/* loop for blogs  */}
-          {posts.map((post) => (
-            <Link href={`blogs/${post.slug}`} key={post._id}>
-              <a>
-                <motion.div variants={fadeInUp}>
-                  <BlogCards />
-                </motion.div>
-              </a>
-            </Link>
-          ))}
+          <Grid
+            templateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,2fr)" }}
+            gap={10}
+          >
+            {/* blogs */}
+            {blogs.map((blog) => (
+              <div key={blog.id}>
+                <Cards
+                  projectName={blog.blogTitle}
+                  projectImage={blog.heroImage}
+                  projectDescription={blog.description}
+                />
+              </div>
+            ))}
+          </Grid>
         </ContainerComponents>
       </motion.div>
     </>
@@ -50,23 +54,14 @@ const Blogs = ({ posts }) => {
 export default Blogs;
 
 export const getStaticProps = async () => {
-  const posts =
-    await sanityClient.fetch(`*[_type == 'post']  | order(_createdAt desc)
-  {
-      _id,
-      mainImage,
-      publishedAt,
-      description,
-      "slug" : slug.current,
-      title,
-      "imageSrc" : mainImage.asset -> url
-
-  }`);
+  const entries = await fetchBlogs();
+  const content = entries.map((entry) => entry.fields);
+  console.log(content);
 
   return {
     props: {
-      posts,
+      blogs: content,
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 };

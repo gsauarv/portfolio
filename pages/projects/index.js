@@ -2,10 +2,10 @@ import { Flex, Grid, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../Components/Animation";
 import Link from "next/link";
-import { sanityClient } from "../../lib/sanity";
 import Head from "next/head";
 import ContainerComponents from "../../Components/ContainerComponents";
 import Card from "../../Components/Card";
+import { fetchBlogs, fetchProject } from "../../util/contentfulPosts";
 
 const project = ({ projects }) => {
   return (
@@ -33,23 +33,17 @@ const project = ({ projects }) => {
             templateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,2fr)" }}
             gap={10}
           >
-            <Card
-              projectImage={"./project.png"}
-              projectName={"Urbar Nepal"}
-              projectDescription={"This is the description of the project"}
-            />
-
-            <Card
-              projectImage={"./project.png"}
-              projectName={"Urbar Nepal"}
-              projectDescription={"This is the description of the project"}
-            />
-
-            <Card
-              projectImage={"./project.png"}
-              projectName={"Urbar Nepal"}
-              projectDescription={"This is the description of the project"}
-            />
+            {projects.map((project) => (
+              <div key={project.id}>
+                <Card
+                  projectName={project.projectTitle}
+                  key={project.id}
+                  projectDescription={project.description}
+                  projectLink={project.slug}
+                  projectImage={project.heroImage}
+                />
+              </div>
+            ))}
           </Grid>
         </ContainerComponents>
       </motion.div>
@@ -59,23 +53,15 @@ const project = ({ projects }) => {
 
 export default project;
 
-export const getStaticProps = async () => {
-  const projects =
-    await sanityClient.fetch(`*[_type == "project"] |order(publishedAt desc)
-  {
-    "projectId":_id,
-    projectName,
-    projectDesc,
-    publishedAt,
-    "mainImage" : "",
-    "slug" : slug.current,
-    
-  }`);
+export async function getStaticProps() {
+  const entries = await fetchProject();
+  const content = entries.map((entry) => entry.fields);
+  console.log(content);
 
   return {
     props: {
-      projects,
+      projects: content,
     },
     revalidate: 10,
   };
-};
+}

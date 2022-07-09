@@ -7,6 +7,7 @@ module.exports = {
       "cdn.dribbble.com",
       "image.freepik.com",
       "micro.medium.com",
+      "images.ctfassets.net",
     ],
   },
 };

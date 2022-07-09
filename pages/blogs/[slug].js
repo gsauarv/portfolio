@@ -3,7 +3,6 @@
 
 import { useRouter } from "next/dist/client/router";
 import BlogDetailsComponent from "../../Components/BlogDetailsComponent";
-import { sanityClient } from "../../lib/sanity";
 
 // Functionall component to get  the sanity api and  display its content.
 

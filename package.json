@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild" : "next-sitemap"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
@@ -16,6 +16,7 @@
     "@emotion/styled": "11",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.15.0",
+    "contentful": "^9.1.32",
     "framer-motion": "^4.1.17",
     "next": "^12.0.3",
     "next-sanity": "^0.4.0",
@@ -28,6 +29,8 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.0.0-beta.5",
+    "contentful-cli": "^1.14.13",
+    "contentful-migration": "^4.9.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0"
   }

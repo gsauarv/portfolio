@@ -3,9 +3,9 @@ import {
   SlideFade,
   keyframes,
   Text,
-  Image,
   Link,
   Button,
+  Image,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -16,7 +16,11 @@ function Card({ projectName, projectLink, projectDescription, projectImage }) {
         <Box borderRadius={"lg"} overflow={"hidden"} mt={"10"}>
           <Box>
             {/* image of the project goes here screenshot */}
-            <Image src={projectImage} alt={projectName} opacity={"70%"} />
+            <Image
+              src={"https:" + projectImage.fields.file.url}
+              alt={projectName}
+              opacity={"70%"}
+            />
           </Box>
           <Text
             fontSize={"18"}
